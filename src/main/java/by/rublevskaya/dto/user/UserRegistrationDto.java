@@ -15,25 +15,25 @@ import java.time.LocalDate;
 @Setter
 public class UserRegistrationDto {
 
-    @NotBlank(message = "Имя пользователя не может быть пустым")
-    @Size(min = 3, max = 20, message = "Имя пользователя должно быть от 3 до 20 символов")
+    @NotBlank(message = "Username cannot be empty")
+    @Size(min = 3, max = 20, message = "Username must be between 3 and 20 characters")
     private String username;
 
-    @NotBlank(message = "Email не может быть пустым")
-    @Email(message = "Некорректный формат email")
+    @NotBlank(message = "Email cannot be empty")
+    @Email(message = "Invalid email format")
     private String email;
 
-    @NotBlank(message = "Пароль обязателен")
-    @Size(min = 8, max = 30, message = "Пароль должен быть от 8 до 30 символов")
+    @NotBlank(message = "Password is required")
+    @Size(min = 8, max = 30, message = "Password must be between 8 and 30 characters")
     private String password;
 
-    @NotNull(message = "Дата рождения обязателена")
-    @Past(message = "Дата рождения должна быть в прошлом")
+    @NotNull(message = "Birthdate is required")
+    @Past(message = "Birthdate must be in the past")
     private LocalDate birthDate;
 
     @Pattern(
             regexp = "^(A|B|AB|O)[+-]$",
-            message = "Группа крови должна быть в формате A+, B-, AB-, O+ и т.д."
+            message = "Blood type must be in the format A+, B-, AB-, O+, etc."
     )
     private String bloodType;
 

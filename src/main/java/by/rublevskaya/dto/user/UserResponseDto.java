@@ -7,10 +7,9 @@ import lombok.Setter;
 @Getter
 @Setter
 public class UserResponseDto {
-    private String username;             // Имя пользователя
-    private String email;                // Email
-    private LocalDate birthDate;         // Дата рождения
-    private String bloodType;            // Группа крови
-    private String fullName;             // Полное имя (если используется)
-
+    private String username;
+    private String email;
+    private LocalDate birthDate;
+    private String bloodType;
+    private String fullName;
 }

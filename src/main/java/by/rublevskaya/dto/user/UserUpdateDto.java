@@ -12,17 +12,17 @@ import java.time.LocalDate;
 @Setter
 public class UserUpdateDto {
 
-    @Size(min = 3, max = 20, message = "Имя пользователя должно быть от 3 до 20 символов")
+    @Size(min = 3, max = 20, message = "Username must be between 3 and 20 characters")
     private String username;
 
-    @Email(message = "Некорректный формат email")
+    @Email(message = "Invalid email format")
     private String email;
 
-    private LocalDate birthDate; // Позволим null, если не обновляется
+    private LocalDate birthDate;
 
     @Pattern(
             regexp = "^(A|B|AB|O)[+-]$",
-            message = "Группа крови должна быть в формате A+, B-, AB-, O+ и т.д."
+            message = "Blood type must be in the format A+, B-, AB-, O+, etc."
     )
     private String bloodType;
 

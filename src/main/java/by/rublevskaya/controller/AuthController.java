@@ -14,7 +14,6 @@ public class AuthController {
 
     private final UserService userService;
 
-    // POST /api/auth/register
     @PostMapping("/register")
     public ResponseEntity<String> registerUser(@Valid @RequestBody UserRegistrationDto dto) {
         userService.registerUser(dto);

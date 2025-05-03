@@ -9,10 +9,10 @@ import lombok.Setter;
 @Setter
 public class AuthRequestDto {
 
-    @NotBlank(message = "Логин обязателен")
-    @Size(min = 3, max = 20, message = "Логин должен быть от 3 до 20 символов")
+    @NotBlank(message = "Login is required")
+    @Size(min = 3, max = 20, message = "Login must be between 3 and 20 characters long")
     private String login;
 
-    @NotBlank(message = "Пароль обязателен")
+    @NotBlank(message = "Password is required")
     private String password;
 }
