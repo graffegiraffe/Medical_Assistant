@@ -7,7 +7,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
-import java.util.List;
+
 
 @Getter
 @Setter
@@ -30,6 +30,11 @@ public class Doctor {
     private String licenseNumber;
 
     private boolean isActive;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "clinic_id", nullable = false)
+    private Clinic clinic;
+
 
     @CreationTimestamp
     @Column(name = "created_at", updatable = false, nullable = false)

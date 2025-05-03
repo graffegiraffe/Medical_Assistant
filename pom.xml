@@ -32,6 +32,7 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId> <!-- JPA -->
         </dependency>
 
+
         <!-- Валидация Bean Validations (javax/jakarta.validation) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
