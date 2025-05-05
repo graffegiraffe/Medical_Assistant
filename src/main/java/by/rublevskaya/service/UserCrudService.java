@@ -1,6 +1,7 @@
 package by.rublevskaya.service;
 
 import by.rublevskaya.dto.user.UserCreateDto;
+import by.rublevskaya.dto.user.UserUpdateDto;
 import by.rublevskaya.exception.CustomException;
 import by.rublevskaya.mapper.UserMapper;
 import by.rublevskaya.model.Security;
@@ -50,37 +51,47 @@ public class UserCrudService {
         return userRepository.findById(id)
                 .orElseThrow(() -> new CustomException("User with ID " + id + " not found"));
     }
-
     @Transactional
-    public User updateUser(Long id, UserCreateDto dto) {
+    public User updateUser(Long id, UserUpdateDto dto) {
         User existingUser = getUserById(id);
 
-        userRepository.findByEmail(dto.getEmail())
-                .filter(user -> !user.getId().equals(id))
-                .ifPresent(user -> {
-                    throw new CustomException("A user with this email already exists");
-                });
+        if (dto.getEmail() != null && !existingUser.getEmail().equals(dto.getEmail())) {
+            userRepository.findByEmail(dto.getEmail())
+                    .ifPresent(user -> {
+                        throw new CustomException("A user with this email already exists");
+                    });
+            existingUser.setEmail(dto.getEmail());
+        }
 
-        userRepository.findByUsername(dto.getUsername())
-                .filter(user -> !user.getId().equals(id))
-                .ifPresent(user -> {
-                    throw new CustomException("A user with this username already exists");
-                });
+        if (dto.getUsername() != null && !existingUser.getUsername().equals(dto.getUsername())) {
+            userRepository.findByUsername(dto.getUsername())
+                    .ifPresent(user -> {
+                        throw new CustomException("A user with this username already exists");
+                    });
+            existingUser.setUsername(dto.getUsername());
+        }
 
-        existingUser.setUsername(dto.getUsername());
-        existingUser.setEmail(dto.getEmail());
-        existingUser.setBirthDate(dto.getBirthDate());
-        existingUser.setBloodType(dto.getBloodType());
-        userRepository.save(existingUser);
+        if (dto.getBirthDate() != null) {
+            existingUser.setBirthDate(dto.getBirthDate());
+        }
+        if (dto.getBloodType() != null) {
+            existingUser.setBloodType(dto.getBloodType());
+        }
 
-        Security security = securityRepository.findByLogin(existingUser.getUsername())
+        User updatedUser = userRepository.save(existingUser);
+
+        Security security = securityRepository.findById(updatedUser.getId())
                 .orElseThrow(() -> new CustomException("Security entry for user not found"));
 
-        security.setLogin(dto.getUsername());
-        security.setPassword(dto.getPassword());
-        securityRepository.save(security);
+        if (dto.getUsername() != null) {
+            security.setLogin(dto.getUsername());
+        }
+        if (dto.getPassword() != null && !dto.getPassword().isEmpty()) {
+            security.setPassword(dto.getPassword());
+        }
 
-        return existingUser;
+        securityRepository.save(security);
+        return updatedUser;
     }
 
     @Transactional

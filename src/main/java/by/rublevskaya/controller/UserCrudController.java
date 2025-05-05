@@ -2,6 +2,7 @@ package by.rublevskaya.controller;
 
 import by.rublevskaya.dto.user.UserCreateDto;
 import by.rublevskaya.dto.user.UserResponseDto;
+import by.rublevskaya.dto.user.UserUpdateDto;
 import by.rublevskaya.mapper.UserMapper;
 import by.rublevskaya.model.User;
 import by.rublevskaya.service.UserCrudService;
@@ -21,9 +22,10 @@ public class UserCrudController {
     private final UserMapper userMapper;
 
     @PostMapping
-    public ResponseEntity<User> createUser(@Valid @RequestBody UserCreateDto dto) {
+    public ResponseEntity<UserResponseDto> createUser(@Valid @RequestBody UserCreateDto dto) {
         User user = userCrudService.createUser(dto);
-        return ResponseEntity.ok(user);
+        UserResponseDto responseDto = userMapper.toDto(user);
+        return ResponseEntity.ok(responseDto);
     }
 
     @GetMapping
@@ -43,11 +45,11 @@ public class UserCrudController {
         return ResponseEntity.ok(responseDto);
 
     }
-
     @PutMapping("/{id}")
-    public ResponseEntity<User> updateUser(@PathVariable Long id, @Valid @RequestBody UserCreateDto dto) {
+    public ResponseEntity<UserResponseDto> updateUser(@PathVariable Long id, @Valid @RequestBody UserUpdateDto dto) {
         User updatedUser = userCrudService.updateUser(id, dto);
-        return ResponseEntity.ok(updatedUser);
+        UserResponseDto responseDto = userMapper.toDto(updatedUser);
+        return ResponseEntity.ok(responseDto);
     }
 
     @DeleteMapping("/{id}")
