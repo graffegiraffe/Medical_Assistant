@@ -27,7 +27,7 @@ public class Security {
     @Column(nullable = false) // Роль: USER, ADMIN, DOCTOR
     private String role;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 

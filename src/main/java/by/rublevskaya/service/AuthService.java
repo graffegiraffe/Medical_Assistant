@@ -1,5 +1,7 @@
 package by.rublevskaya.service;
 
+import by.rublevskaya.dto.auth.AuthRequestDto;
+import by.rublevskaya.dto.auth.AuthResponseDto;
 import by.rublevskaya.dto.auth.UserRegistrationDto;
 import by.rublevskaya.exception.CustomException;
 import by.rublevskaya.mapper.UserMapper;
@@ -13,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class UserService {
+public class AuthService {
 
     private final UserRepository userRepository;
     private final SecurityRepository securityRepository;
@@ -34,5 +36,20 @@ public class UserService {
         security.setUser(savedUser);
 
         securityRepository.save(security);
+    }
+
+    @Transactional(readOnly = true)
+    public AuthResponseDto loginUser(AuthRequestDto authRequest) {
+        Security security = securityRepository.findByLogin(authRequest.getLogin())
+                .orElseThrow(() -> new CustomException("Invalid login or password"));
+
+        if (!security.getPassword().equals(authRequest.getPassword())) {
+            throw new CustomException("Invalid login or password");
+        }
+
+        AuthResponseDto response = new AuthResponseDto();
+        response.setLogin(security.getLogin());
+        response.setRole(security.getRole());
+        return response;
     }
 }
