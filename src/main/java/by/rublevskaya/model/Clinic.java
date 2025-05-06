@@ -12,7 +12,6 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Scope("prototype")
 @AllArgsConstructor
@@ -36,9 +35,6 @@ public class Clinic {
     private String address;
 
     private String phone;
-
-    @OneToMany(mappedBy = "clinic", cascade = CascadeType.ALL)
-    private List<Doctor> doctors;
 
     @CreationTimestamp
     @Column(name = "created_at", updatable = false, nullable = false)

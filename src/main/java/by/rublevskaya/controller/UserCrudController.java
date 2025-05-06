@@ -1,6 +1,6 @@
 package by.rublevskaya.controller;
 
-import by.rublevskaya.dto.user.UserCreateDto;
+import by.rublevskaya.dto.user.UserDto;
 import by.rublevskaya.dto.user.UserResponseDto;
 import by.rublevskaya.dto.user.UserUpdateDto;
 import by.rublevskaya.mapper.UserMapper;
@@ -22,7 +22,7 @@ public class UserCrudController {
     private final UserMapper userMapper;
 
     @PostMapping
-    public ResponseEntity<UserResponseDto> createUser(@Valid @RequestBody UserCreateDto dto) {
+    public ResponseEntity<UserResponseDto> createUser(@Valid @RequestBody UserDto dto) {
         User user = userCrudService.createUser(dto);
         UserResponseDto responseDto = userMapper.toDto(user);
         return ResponseEntity.ok(responseDto);
@@ -45,9 +45,17 @@ public class UserCrudController {
         return ResponseEntity.ok(responseDto);
 
     }
+
     @PutMapping("/{id}")
-    public ResponseEntity<UserResponseDto> updateUser(@PathVariable Long id, @Valid @RequestBody UserUpdateDto dto) {
+    public ResponseEntity<UserResponseDto> updateUser(@PathVariable Long id, @Valid @RequestBody UserDto dto) {
         User updatedUser = userCrudService.updateUser(id, dto);
+        UserResponseDto responseDto = userMapper.toDto(updatedUser);
+        return ResponseEntity.ok(responseDto);
+    }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<UserResponseDto> partialUpdateUser(@PathVariable Long id, @Valid @RequestBody UserUpdateDto dto) {
+        User updatedUser = userCrudService.partialUpdateUser(id, dto);
         UserResponseDto responseDto = userMapper.toDto(updatedUser);
         return ResponseEntity.ok(responseDto);
     }
