@@ -27,9 +27,8 @@ public class Security {
     @Column(nullable = false) // Роль: USER, ADMIN, DOCTOR
     private String role;
 
-    @OneToOne(cascade = CascadeType.REMOVE)
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    @Column(name = "user_id", nullable = false)
+    private Long userId;
 
     @CreationTimestamp
     @Column(nullable = false, updatable = false)

@@ -24,18 +24,23 @@ public class UserCrudService {
 
     @Transactional
     public User createUser(UserDto dto) {
+        // Проверяем уникальность email и username
         if (userRepository.findByEmail(dto.getEmail()).isPresent() || userRepository.findByUsername(dto.getUsername()).isPresent()) {
-            throw new CustomException("A user with this email or username already exists");
+            throw new CustomException("A user with this email or username already exists.");
         }
 
+        // Создаём и сохраняем пользователя
         User user = userMapper.toEntity(dto);
         User savedUser = userRepository.save(user);
 
+        // Создаём запись в таблице Security
         Security security = new Security();
         security.setLogin(dto.getUsername());
-        security.setPassword(dto.getPassword());
+
+        // Пароль должен быть хэширован
+        security.setPassword(dto.getPassword()); // НЕ ЗАБУДЬТЕ использовать шифрование!
         security.setRole("USER");
-        security.setUser(savedUser);
+        security.setUserId(savedUser.getId()); // Устанавливаем ID пользователя
         securityRepository.save(security);
 
         return savedUser;

@@ -2,16 +2,24 @@ package by.rublevskaya.service;
 
 import by.rublevskaya.dto.auth.AuthRequestDto;
 import by.rublevskaya.dto.auth.AuthResponseDto;
-import by.rublevskaya.dto.auth.UserRegistrationDto;
+import by.rublevskaya.dto.doctor.DoctorDto;
+import by.rublevskaya.dto.user.UserDto;
 import by.rublevskaya.exception.CustomException;
+import by.rublevskaya.mapper.DoctorMapper;
 import by.rublevskaya.mapper.UserMapper;
+import by.rublevskaya.model.Doctor;
 import by.rublevskaya.model.Security;
 import by.rublevskaya.model.User;
+import by.rublevskaya.repository.ClinicRepository;
+import by.rublevskaya.repository.DoctorRepository;
 import by.rublevskaya.repository.SecurityRepository;
 import by.rublevskaya.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.time.LocalDateTime;
+
 
 @Service
 @RequiredArgsConstructor
@@ -20,21 +28,65 @@ public class AuthService {
     private final UserRepository userRepository;
     private final SecurityRepository securityRepository;
     private final UserMapper userMapper;
+    private final DoctorRepository doctorRepository;
+    private final DoctorMapper doctorMapper;
+    private final ClinicRepository clinicRepository;
 
     @Transactional
-    public void registerUser(UserRegistrationDto dto) {
+    public void registerUser(UserDto dto) {
         if (userRepository.findByEmail(dto.getEmail()).isPresent() || userRepository.findByUsername(dto.getUsername()).isPresent()) {
-            throw new CustomException("A user with this email or username already exists");
+            throw new CustomException("A user with this email or username already exists.");
         }
+
         User user = userMapper.toEntity(dto);
+        user.setDoctorId(null);
         User savedUser = userRepository.save(user);
 
         Security security = new Security();
         security.setLogin(dto.getUsername());
         security.setPassword(dto.getPassword());
         security.setRole("USER");
-        security.setUser(savedUser);
+        security.setUserId(savedUser.getId());
+        security.setCreated(LocalDateTime.now());
+        security.setUpdated(LocalDateTime.now());
 
+        securityRepository.save(security);
+    }
+
+    @Transactional
+    public void registerDoctor(DoctorDto dto) {
+        if (!clinicRepository.existsByName(dto.getClinicName())) {
+            throw new CustomException("Clinic with name " + dto.getClinicName() + " does not exist.");
+        }
+
+        if (doctorRepository.existsByLicenseNumber(dto.getLicenseNumber())) {
+            throw new CustomException("A doctor with this license number already exists.");
+        }
+
+        if (securityRepository.existsByLogin(dto.getUsername())) {
+            throw new CustomException("A user with this username already exists.");
+        }
+
+        User user = new User();
+        user.setUsername(dto.getFullName());
+        user.setEmail(dto.getEmail());
+        user.setBirthDate(dto.getBirthDate());
+        user.setBloodType(dto.getBloodType());
+        user.setCreatedAt(LocalDateTime.now());
+        user.setUpdatedAt(LocalDateTime.now());
+        User savedUser = userRepository.save(user);
+
+        Doctor doctor = doctorMapper.fromRegistrationDto(dto);
+        doctor.setUsername(dto.getUsername());
+        doctorRepository.save(doctor);
+
+        Security security = new Security();
+        security.setLogin(dto.getUsername());
+        security.setPassword(dto.getPassword());
+        security.setRole("DOCTOR");
+        security.setUserId(savedUser.getId());
+        security.setCreated(LocalDateTime.now());
+        security.setUpdated(LocalDateTime.now());
         securityRepository.save(security);
     }
 

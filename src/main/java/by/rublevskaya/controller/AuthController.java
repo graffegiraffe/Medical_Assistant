@@ -2,7 +2,8 @@ package by.rublevskaya.controller;
 
 import by.rublevskaya.dto.auth.AuthRequestDto;
 import by.rublevskaya.dto.auth.AuthResponseDto;
-import by.rublevskaya.dto.auth.UserRegistrationDto;
+import by.rublevskaya.dto.doctor.DoctorDto;
+import by.rublevskaya.dto.user.UserDto;
 import by.rublevskaya.service.AuthService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -17,7 +18,7 @@ public class AuthController {
     private final AuthService userService;
 
     @PostMapping("/register")
-    public ResponseEntity<String> registerUser(@Valid @RequestBody UserRegistrationDto dto) {
+    public ResponseEntity<String> registerUser(@Valid @RequestBody UserDto dto) {
         userService.registerUser(dto);
         return ResponseEntity.ok("User registered successfully!");
     }
@@ -27,4 +28,11 @@ public class AuthController {
         AuthResponseDto responseDto = userService.loginUser(requestDto);
         return ResponseEntity.ok(responseDto);
     }
+
+    @PostMapping("/register-doctor")
+    public ResponseEntity<String> registerDoctor(@Valid @RequestBody DoctorDto dto) {
+        userService.registerDoctor(dto);
+        return ResponseEntity.ok("Doctor registered successfully!");
+    }
+
 }
