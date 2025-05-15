@@ -22,8 +22,6 @@ public class MedicalRecordMapper {
 
     public MedicalRecordResponseDto toResponseDto(MedicalRecord medicalRecord) {
         MedicalRecordResponseDto response = new MedicalRecordResponseDto();
-        response.setId(medicalRecord.getId());
-        response.setUserId(medicalRecord.getUserId());
         response.setTitle(medicalRecord.getTitle());
         response.setDate(medicalRecord.getDate());
         response.setDescription(medicalRecord.getDescription());

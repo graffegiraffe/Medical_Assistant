@@ -1,6 +1,12 @@
 package by.rublevskaya.model;
 
-import jakarta.persistence.*;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
@@ -12,23 +18,20 @@ import java.time.LocalDateTime;
 @Setter
 @Entity
 @Table(name = "health_metrics", schema = "medical_assistant")
-public class HealthMetrics {
+public class HealthMetric {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    @Column(name = "user_id", nullable = false)
+    private Long userId;
 
     @Column(nullable = false)
     private LocalDateTime timestamp;
 
-    @Column(name = "blood_pressure")
-    private String bloodPressure;
+    private String bloodPressure; // Формат: "120/80"
 
-    @Column(name = "blood_sugar")
     private Double bloodSugar;
 
     private Double temperature;
@@ -36,10 +39,10 @@ public class HealthMetrics {
     private String notes;
 
     @CreationTimestamp
-    @Column(name = "created_at", updatable = false, nullable = false)
+    @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
 
     @UpdateTimestamp
-    @Column(name = "updated_at", nullable = false)
+    @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 }
