@@ -46,8 +46,6 @@ public class HealthMetricCrudService {
     public HealthMetricResponseDto updateFullMetric(Long id, HealthMetricDto dto) {
         HealthMetric existingMetric = healthMetricRepository.findById(id)
                 .orElseThrow(() -> new CustomException("Health metric not found with ID " + id));
-
-        // Полное обновление
         healthMetricMapper.updateEntity(existingMetric, dto);
         HealthMetric updatedMetric = healthMetricRepository.save(existingMetric);
         return healthMetricMapper.toResponseDto(updatedMetric);
@@ -57,8 +55,6 @@ public class HealthMetricCrudService {
     public HealthMetricResponseDto updatePartialMetric(Long id, HealthMetricDto dto) {
         HealthMetric existingMetric = healthMetricRepository.findById(id)
                 .orElseThrow(() -> new CustomException("Health metric not found with ID " + id));
-
-        // Частичное обновление
         healthMetricMapper.updatePartialEntity(existingMetric, dto);
         HealthMetric updatedMetric = healthMetricRepository.save(existingMetric);
         return healthMetricMapper.toResponseDto(updatedMetric);
