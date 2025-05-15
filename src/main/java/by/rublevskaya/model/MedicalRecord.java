@@ -19,9 +19,11 @@ public class MedicalRecord {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    @Column(name = "user_id", nullable = false)
+    private Long userId; // Ссылка на пользователя
+
+    @Column(name = "doctor_id", nullable = false)
+    private Long doctorId; // Ссылка на врача
 
     @Column(nullable = false)
     private String title;
@@ -44,4 +46,8 @@ public class MedicalRecord {
     @UpdateTimestamp
     @Column(name = "updated_at", nullable = false)
     private LocalDateTime updatedAt;
+
+    public enum RecordType {
+        ALLERGY, VACCINE, ILLNESS
+    }
 }
