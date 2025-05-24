@@ -18,23 +18,26 @@ public class Appointment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    @Column(name = "user_id", nullable = false)
+    private Long userId;
 
-    private String doctorName;
+    @Column(name = "doctor_id", nullable = false)
+    private Long doctorId;
 
-    private String specialty;
+    @Column(name = "license_number", nullable = false)
+    private String licenseNumber;
 
     @Column(name = "date_time", nullable = false)
     private LocalDateTime dateTime;
 
+    @Column(name = "notes")
     private String notes;
 
-    private boolean completed;
+    @Column(name = "completed", nullable = false)
+    private Boolean completed = false;
 
     @CreationTimestamp
-    @Column(name = "created_at", updatable = false, nullable = false)
+    @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
     @UpdateTimestamp
