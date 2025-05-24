@@ -31,6 +31,7 @@ public class UserDto {
     @Past(message = "Birthdate must be in the past")
     private LocalDate birthDate;
 
+    @NotNull(message = "Blood type is required")
     @Pattern(
             regexp = "^(A|B|AB|O)[+-]$",
             message = "Blood type must be in the format A+, B-, AB-, O+, etc."

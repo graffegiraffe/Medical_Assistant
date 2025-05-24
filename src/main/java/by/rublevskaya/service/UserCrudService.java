@@ -24,31 +24,29 @@ public class UserCrudService {
 
     @Transactional
     public User createUser(UserDto dto) {
-        // Проверяем уникальность email и username
         if (userRepository.findByEmail(dto.getEmail()).isPresent() || userRepository.findByUsername(dto.getUsername()).isPresent()) {
             throw new CustomException("A user with this email or username already exists.");
         }
-
-        // Создаём и сохраняем пользователя
         User user = userMapper.toEntity(dto);
         User savedUser = userRepository.save(user);
-
-        // Создаём запись в таблице Security
         Security security = new Security();
         security.setLogin(dto.getUsername());
-
-        // Пароль должен быть хэширован
-        security.setPassword(dto.getPassword()); // НЕ ЗАБУДЬТЕ использовать шифрование!
+        security.setPassword(dto.getPassword());
         security.setRole("USER");
-        security.setUserId(savedUser.getId()); // Устанавливаем ID пользователя
+        security.setUserId(savedUser.getId());
         securityRepository.save(security);
-
         return savedUser;
     }
 
     @Transactional(readOnly = true)
     public List<User> getAllUsers() {
-        return userRepository.findAll();
+        List<User> users = userRepository.findAll();
+
+        if (users.isEmpty()) {
+            throw new CustomException("No users found in the database");
+        }
+
+        return users;
     }
 
     @Transactional(readOnly = true)
@@ -59,7 +57,9 @@ public class UserCrudService {
 
     @Transactional
     public User updateUser(Long id, UserDto dto) {
-        User existingUser = getUserById(id);
+        User existingUser = userRepository.findById(id)
+                .orElseThrow(() -> new CustomException(String.format("User with ID %d was not found", id)));
+
 
         if (!existingUser.getEmail().equals(dto.getEmail())) {
             userRepository.findByEmail(dto.getEmail())
