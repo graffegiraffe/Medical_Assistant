@@ -20,6 +20,9 @@ public class ClinicService {
 
     public List<ClinicResponseDto> getAllClinics() {
         List<Clinic> clinics = clinicRepository.findAll();
+        if (clinics.isEmpty()) {
+            throw new CustomException("No clinics found.");
+        }
         return clinicMapper.toDtoList(clinics);
     }
 

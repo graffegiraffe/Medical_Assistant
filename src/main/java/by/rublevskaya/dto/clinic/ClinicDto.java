@@ -16,6 +16,7 @@ public class ClinicDto {
     @NotBlank(message = "Address must not be blank")
     private String address;
 
+    @NotBlank(message = "Phone number must not be blank")
     @Pattern(
             regexp = "^\\+?[0-9. ()-]{7,25}$",
             message = "Phone number has invalid format"
