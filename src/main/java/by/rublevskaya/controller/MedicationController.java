@@ -41,8 +41,8 @@ public class MedicationController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteMedication(@PathVariable Long id) {
-        medicationCrudService.deleteMedication(id);
-        return ResponseEntity.noContent().build();
+    public ResponseEntity<String> deleteMedication(@PathVariable Long id) {
+        String responseMessage = medicationCrudService.deleteMedication(id);
+        return ResponseEntity.ok(responseMessage);
     }
 }

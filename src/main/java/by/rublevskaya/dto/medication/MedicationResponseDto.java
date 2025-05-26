@@ -8,7 +8,6 @@ import java.time.LocalDateTime;
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MedicationResponseDto {
-    private Long id;
     private Long userId;
     private String name;
     private String dosage;

@@ -21,7 +21,6 @@ public class MedicationMapper {
 
     public MedicationResponseDto toResponseDto(Medication medication) {
         MedicationResponseDto responseDto = new MedicationResponseDto();
-        responseDto.setId(medication.getId());
         responseDto.setUserId(medication.getUserId());
         responseDto.setName(medication.getName());
         responseDto.setDosage(medication.getDosage());
