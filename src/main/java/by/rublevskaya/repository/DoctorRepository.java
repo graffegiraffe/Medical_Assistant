@@ -11,5 +11,4 @@ public interface DoctorRepository extends JpaRepository<Doctor, Long> {
     Optional<Doctor> findByLicenseNumber(String licenseNumber);
     boolean existsByLicenseNumber(String licenseNumber);
     boolean existsByUsername(String username);
-
 }

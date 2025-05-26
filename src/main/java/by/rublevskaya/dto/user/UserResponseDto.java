@@ -10,9 +10,11 @@ import lombok.Setter;
 @Setter
 public class UserResponseDto {
     private String username;
+
     private String email;
+
+    private String bloodType;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private LocalDate birthDate;
-    private String bloodType;
 }

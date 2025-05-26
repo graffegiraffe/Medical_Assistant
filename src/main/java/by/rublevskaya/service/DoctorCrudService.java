@@ -13,16 +13,16 @@ import by.rublevskaya.repository.DoctorRepository;
 import by.rublevskaya.repository.SecurityRepository;
 import by.rublevskaya.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.dao.DataIntegrityViolationException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
+@Slf4j
 @RequiredArgsConstructor
 public class DoctorCrudService {
 
@@ -50,6 +50,7 @@ public class DoctorCrudService {
         }
             Doctor doctor = doctorMapper.toEntity(registrationDto);
             Doctor savedDoctor = doctorRepository.save(doctor);
+            log.info("New doctor created successfully. Doctor ID: {}", savedDoctor.getId());
 
             User user = new User();
             user.setUsername(registrationDto.getUsername());
@@ -70,6 +71,13 @@ public class DoctorCrudService {
     }
     @Transactional(readOnly = true)
     public List<DoctorResponseDto> getAllDoctors() {
+        log.info("Fetching all doctors.");
+        List<Doctor> doctors = doctorRepository.findAll();
+        if (doctors.isEmpty()) {
+            log.warn("No doctors found.");
+            throw new CustomException("No doctors found.");
+        }
+        log.info("Successfully fetched {} doctors.", doctors.size());
         return doctorRepository.findAll().stream()
                 .map(doctorMapper::toResponseDto)
                 .collect(Collectors.toList());
@@ -77,38 +85,50 @@ public class DoctorCrudService {
 
     @Transactional(readOnly = true)
     public DoctorResponseDto getDoctorById(Long id) {
-        Doctor doctor = doctorRepository.findById(id)
-                .orElseThrow(() -> new CustomException("Doctor with ID " + id + " not found."));
+        log.info("Fetching doctor with ID: {}", id);
+        Doctor doctor = doctorRepository.findById(id).orElseThrow(() -> {
+            log.warn("Doctor with ID {} not found.", id);
+            return new CustomException("Doctor with ID " + id + " not found");
+        });
+        log.info("Successfully fetched doctor with ID: {}", id);
         return doctorMapper.toResponseDto(doctor);
     }
 
     @Transactional
     public DoctorDto updateDoctor(Long id, DoctorDto dto) {
+        log.info("Updating doctor with ID: {}", id);
         Doctor existingDoctor = doctorRepository.findById(id)
                 .orElseThrow(() -> new CustomException("Doctor with ID " + id + " not found."));
 
         Doctor updatedDoctor = doctorMapper.toEntity(dto);
         updatedDoctor.setId(existingDoctor.getId());
         Doctor savedDoctor = doctorRepository.save(updatedDoctor);
+        log.info("Successfully updated doctor with ID: {}", updatedDoctor.getId());
         return doctorMapper.toDto(savedDoctor);
     }
 
     @Transactional
     public DoctorDto partialUpdateDoctor(Long id, DoctorUpdateDto dto) {
-        Doctor doctor = doctorRepository.findById(id)
-                .orElseThrow(() -> new CustomException("Doctor with ID " + id + " not found."));
+        log.info("Partially updating doctor with ID: {}", id);
+        Doctor doctor = doctorRepository.findById(id).orElseThrow(() -> {
+            log.warn("Doctor with ID {} not found.", id);
+            return new CustomException("Doctor with ID " + id + " not found");
+        });
 
         doctorMapper.updateEntity(doctor, dto);
         Doctor savedDoctor = doctorRepository.save(doctor);
+        log.info("Doctor with partially updated successfully." + id);
         return doctorMapper.toDto(savedDoctor);
     }
 
     @Transactional
     public void deleteDoctor(Long id) {
+        log.info("Attempting to delete doctor with ID: {}", id);
         if (!doctorRepository.existsById(id)) {
-            throw new CustomException("Doctor with ID " + id + " not found.");
+            log.warn("Doctor with ID {} does not exist. Deletion aborted.", id);
+            throw new CustomException("Doctor with ID " + id + " does not exist");
         }
         doctorRepository.deleteById(id);
+        log.info("Doctor with ID {} has been successfully deleted.", id);
     }
-
 }

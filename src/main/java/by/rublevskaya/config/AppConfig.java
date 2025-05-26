@@ -13,7 +13,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @ComponentScan("by.rublevskaya")
 @Configuration
 public class AppConfig implements WebMvcConfigurer {
-
     public HandlerInterceptor logInterceptor;
 
     @Autowired
@@ -25,5 +24,4 @@ public class AppConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(logInterceptor).addPathPatterns("/**");
     }
-    
 }

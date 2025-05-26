@@ -1,4 +1,5 @@
 package by.rublevskaya.dto.clinic;
+
 import lombok.Data;
 
 @Data

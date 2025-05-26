@@ -14,11 +14,15 @@ public class HealthMetricDto {
     @NotNull(message = "Timestamp cannot be null.")
     private LocalDateTime timestamp;
 
+    @NotNull(message = "Blood Pressure cannot be null.")
     private String bloodPressure; // Формат: "120/80"
 
+    @NotNull(message = "Blood Sugar cannot be null.")
     private Double bloodSugar;
 
+    @NotNull(message = "Temperature cannot be null.")
     private Double temperature;
 
+    @NotNull(message = "Notes cannot be null.")
     private String notes;
 }

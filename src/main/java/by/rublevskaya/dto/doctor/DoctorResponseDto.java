@@ -13,5 +13,4 @@ public class DoctorResponseDto {
     private String fullName;
     private String username;
     private Boolean isActive;
-
 }

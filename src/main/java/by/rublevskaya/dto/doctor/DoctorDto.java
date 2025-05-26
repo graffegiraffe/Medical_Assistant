@@ -43,7 +43,6 @@ public class DoctorDto {
     @Email(message = "Incorrect email format")
     private String email;
 
-
     @NotBlank(message = "Password is required")
     private String password;
 

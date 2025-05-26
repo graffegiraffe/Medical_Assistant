@@ -9,7 +9,5 @@ import java.util.Optional;
 @Repository
 public interface SecurityRepository extends JpaRepository<Security, Long> {
     boolean existsByLogin(String login);
-
     Optional<Security> findByLogin(String login);
-
 }

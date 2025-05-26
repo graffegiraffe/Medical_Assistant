@@ -10,9 +10,7 @@ import lombok.Data;
 
 import java.time.LocalDateTime;
 
-
 @Data
-
 public class MedicationDto {
 
     @NotNull(message = "User ID cannot be null.")
