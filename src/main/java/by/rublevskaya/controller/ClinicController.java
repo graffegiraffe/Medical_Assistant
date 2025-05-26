@@ -39,9 +39,9 @@ public class ClinicController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteClinic(@PathVariable Long id) {
-        clinicService.deleteClinicById(id);
-        return ResponseEntity.noContent().build();
+    public ResponseEntity<String> deleteClinic(@PathVariable Long id) {
+        String message = clinicService.deleteClinicById(id);
+        return ResponseEntity.ok(message);
     }
 
     @GetMapping("/{id}")

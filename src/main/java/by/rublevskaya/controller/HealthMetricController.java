@@ -45,8 +45,8 @@ public class HealthMetricController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteMetric(@PathVariable Long id) {
-        healthMetricCrudService.deleteMetric(id);
-        return ResponseEntity.noContent().build();
+    public ResponseEntity<String> deleteMetric(@PathVariable Long id) {
+        String message = healthMetricCrudService.deleteMetric(id);
+        return ResponseEntity.ok(message);
     }
 }

@@ -32,11 +32,12 @@ public class ClinicService {
         return clinicMapper.toDto(savedClinic);
     }
 
-    public void deleteClinicById(Long id) {
+    public String deleteClinicById(Long id) {
         if (!clinicRepository.existsById(id)) {
             throw new CustomException("Clinic with ID " + id + " does not exist");
         }
         clinicRepository.deleteById(id);
+        return "Clinic with ID " + id + " has been successfully deleted.";
     }
 
     public ClinicResponseDto getClinicById(Long id) {
@@ -69,7 +70,6 @@ public class ClinicService {
         if (updateDto.getPhone() != null) {
             clinic.setPhone(updateDto.getPhone());
         }
-
         Clinic updatedClinic = clinicRepository.save(clinic);
         return clinicMapper.toResponseDto(updatedClinic);
     }
