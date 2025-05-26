@@ -39,8 +39,8 @@ public class MedicalRecordController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteMedicalRecord(@PathVariable Long id) {
-        medicalRecordCrudService.deleteMedicalRecord(id);
-        return ResponseEntity.noContent().build();
+    public ResponseEntity<String> deleteMedicalRecord(@PathVariable Long id) {
+        String responseMessage = medicalRecordCrudService.deleteMedicalRecord(id);
+        return ResponseEntity.ok(responseMessage);
     }
 }

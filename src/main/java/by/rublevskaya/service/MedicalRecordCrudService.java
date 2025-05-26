@@ -44,6 +44,10 @@ public class MedicalRecordCrudService {
 
     @Transactional(readOnly = true)
     public List<MedicalRecordResponseDto> getMedicalRecordsByUserId(Long userId) {
+        List<MedicalRecord> medicalRecords = medicalRecordRepository.findByUserId(userId);
+        if (medicalRecords.isEmpty()) {
+            throw new CustomException("No medical records found for user with ID " + userId);
+        }
         return medicalRecordRepository.findByUserId(userId)
                 .stream()
                 .map(medicalRecordMapper::toResponseDto)
