@@ -6,6 +6,7 @@ import by.rublevskaya.dto.clinic.ClinicUpdateDto;
 import by.rublevskaya.service.ClinicService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -36,6 +38,12 @@ public class ClinicController {
     public ResponseEntity<ClinicResponseDto> addClinic(@RequestBody @Valid ClinicDto clinicCreateDto) {
         ClinicResponseDto createdClinic = clinicService.addClinic(clinicCreateDto);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdClinic);
+    }
+
+    @GetMapping("/sorted")
+    public ResponseEntity<List<ClinicResponseDto>> getAllClinicsWithSorting(@RequestParam String field) {
+        List<ClinicResponseDto> sortedClinics = clinicService.getAllClinicsWithSorting(field);
+        return ResponseEntity.ok(sortedClinics);
     }
 
     @DeleteMapping("/{id}")
@@ -62,5 +70,13 @@ public class ClinicController {
             @RequestBody @Valid ClinicUpdateDto updateDto) {
         ClinicResponseDto updatedClinic = clinicService.partialUpdateClinic(id, updateDto);
         return ResponseEntity.ok(updatedClinic);
+    }
+
+    @GetMapping("/paginated")
+    public ResponseEntity<Page<ClinicResponseDto>> getClinicsWithPagination(
+            @RequestParam int page,
+            @RequestParam int size) {
+        Page<ClinicResponseDto> paginatedClinics = clinicService.getClinicsWithPagination(page, size);
+        return ResponseEntity.ok(paginatedClinics);
     }
 }

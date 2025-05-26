@@ -8,6 +8,9 @@ import by.rublevskaya.mapper.ClinicMapper;
 import by.rublevskaya.model.Clinic;
 import by.rublevskaya.repository.ClinicRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -72,5 +75,21 @@ public class ClinicService {
         }
         Clinic updatedClinic = clinicRepository.save(clinic);
         return clinicMapper.toResponseDto(updatedClinic);
+    }
+
+    public List<ClinicResponseDto> getAllClinicsWithSorting(String field) {
+        List<Clinic> sortedClinics = clinicRepository.findAll(Sort.by(Sort.Direction.ASC, field));
+        if (sortedClinics.isEmpty()) {
+            throw new CustomException("No clinics found.");
+        }
+        return clinicMapper.toDtoList(sortedClinics);
+    }
+
+    public Page<ClinicResponseDto> getClinicsWithPagination(int page, int size) {
+        Page<Clinic> pagedClinics = clinicRepository.findAll(PageRequest.of(page, size));
+        if (pagedClinics.isEmpty()) {
+            throw new CustomException("No clinics found on the requested page.");
+        }
+        return pagedClinics.map(clinicMapper::toResponseDto);
     }
 }
