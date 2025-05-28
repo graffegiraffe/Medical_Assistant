@@ -1,5 +1,6 @@
 package by.rublevskaya.service;
 
+import by.rublevskaya.aop.Timed;
 import by.rublevskaya.dto.doctor.DoctorDto;
 import by.rublevskaya.dto.doctor.DoctorResponseDto;
 import by.rublevskaya.dto.doctor.DoctorUpdateDto;
@@ -33,6 +34,7 @@ public class DoctorCrudService {
     private final ClinicRepository clinicRepository;
 
     @Transactional
+    @Timed
     public DoctorResponseDto createDoctor(DoctorDto registrationDto) {
 
         if (doctorRepository.existsByLicenseNumber(registrationDto.getLicenseNumber())) {
@@ -69,6 +71,8 @@ public class DoctorCrudService {
             securityRepository.save(security);
             return doctorMapper.toResponseDto(savedDoctor);
     }
+
+    @Timed
     @Transactional(readOnly = true)
     public List<DoctorResponseDto> getAllDoctors() {
         log.info("Fetching all doctors.");
