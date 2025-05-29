@@ -621,7 +621,12 @@ GET /actuator/info
 - Processing data for transfer between layers.
 
 ---
+## Testing
 
+- DataBase DDL is available here [DDL](src/main/resources/DDL/database_ddl.sql)
+- Postman collection is available here [collection]()
+
+---
 ## Installation and launch
 
 ### Requirements
