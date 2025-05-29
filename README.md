@@ -649,7 +649,7 @@ java -jar target/medical-assistant.jar
 ```
 5. The application will be available on port `8080`.
 
---
+---
 
 ## Contacts
 
