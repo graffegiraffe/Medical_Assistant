@@ -1,0 +1,1092 @@
+{
+	"info": {
+		"_postman_id": "6dc7f221-b5df-40b4-aac6-aa76e9f19293",
+		"name": "medical_assistant",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43359359",
+		"_collection_link": "https://red-crescent-844835.postman.co/workspace/f00137fb-62e2-4645-8362-ef0c80cb62c7/collection/43359359-6dc7f221-b5df-40b4-aac6-aa76e9f19293?action=share&source=collection_link&creator=43359359"
+	},
+	"item": [
+		{
+			"name": "CRUD_users",
+			"item": [
+				{
+					"name": "Create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\n       \"username\": \"SOTNICOV\",\n       \"email\": \"SOTNICOV@example.com\",\n       \"password\": \"SOTNICOV2222\",\n       \"birthDate\": \"2000-01-01\",\n       \"bloodType\": \"B+\"\n   }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/users",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n      \"username\": \"newUsername\",\n      \"email\": \"newwwwemail@example.com\",\n      \"password\": \"newsecurepassword\",\n      \"birthDate\": \"1990-01-01\",\n      \"bloodType\": \"O+\"\n  }\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/users/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update part user",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n      \"username\": \"newUUUUsername\"\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/users/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AUTH",
+			"item": [
+				{
+					"name": "Registration users",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"KatushaDasha\",\n  \"email\": \"KatushaDasha@example.com\",\n  \"password\": \"KatushaDasha\",\n  \"birthDate\": \"2005-11-25\",\n  \"bloodType\": \"A+\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/auth/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"login\": \"Katusha\",\n  \"password\": \"Katusha123\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registration doctors",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fullName\": \"John Doe\",\n    \"username\": \"johndoeeee\",\n    \"password\": \"SOTNICOVeee222!\",\n    \"specialty\": \"Neurologist\",\n    \"licenseNumber\": \"L123456789\",\n    \"clinicName\": \"Updated Clinic Nameeeeee\",\n    \"isActive\": true\n}\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/auth/register-doctor",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"register-doctor"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CLINICS",
+			"item": [
+				{
+					"name": "Get all clinics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/clinics",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clinics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add clinics",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Лечебный центр здоровья\",\n    \"address\": \"г. Минск, ул. Приморская, 15\",\n    \"phone\": \"+375 29 123 45 67\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/clinics",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clinics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get clinic",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/clinics/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clinics",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete clinic",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/clinics/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clinics",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update clinic",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n      \"name\": \"Updated Clinic Nameeeeee\",\n      \"address\": \"123 Main Streeteeeeee\",\n      \"phone\": \"+153456789\"\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/clinics/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clinics",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update part clinic",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n      \"phone\": \"+123456789\"\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/clinics/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clinics",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get sorted clinics",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get paginated clinics",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CRUD doctors",
+			"item": [
+				{
+					"name": "Get all doctors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/doctors",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"doctors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get doctor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/doctors/8",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"doctors",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update doctor",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fullName\": \"John Doe\",\n    \"username\": \"johndoeeeeKKK\",\n    \"password\": \"SOTNICOVeeeKKK222!\",\n    \"specialty\": \"Neurologist\",\n    \"licenseNumber\": \"L123456776\",\n    \"clinicName\": \"Updated Clinic Nameeeeee\",\n    \"isActive\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/doctors/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"doctors",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update part doctor",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fullName\": \"John DoeKKK\",\n    \"username\": \"johndoeeeeKKKK\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/doctors/7",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"doctors",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete doctor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/doctors/7",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"doctors",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create doctor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"specialty\": \"POLUSHA\",\n  \"licenseNumber\": \"DR07543854389\",\n  \"clinicName\": \"Updated Clinic Nameeeeee\",\n  \"fullName\": \"POLUSHA\",\n  \"username\": \"dr.POLUSHA\",\n  \"password\": \"Password is POLUSHA\",\n  \"isActive\": true,\n  \"email\": \"POLUSHA@example.com\",\n  \"birthDate\": \"1990-04-15\",\n  \"bloodType\": \"O+\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/doctors",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"doctors"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MEDICATIONS",
+			"item": [
+				{
+					"name": "Create medications",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userId\": 6,\n  \"name\": \"Aspirin\",\n  \"dosage\": \"100mg\",\n  \"startDate\": \"2023-10-01T09:30:00\",\n  \"endDate\": \"2023-12-01T09:30:00\",\n  \"active\": true\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/medications",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"medications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get medications by user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/medications/user/6",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"medications",
+								"user",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get medications by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/medications/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"medications",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update medications",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userId\": 1,\n  \"name\": \"Updated Aspirin\",\n  \"dosage\": \"150mg\",\n  \"startDate\": \"2023-09-01T09:30:00\",\n  \"endDate\": \"2023-12-31T09:30:00\",\n  \"active\": false\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/medications/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"medications",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete medications",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/medications/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"medications",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MEDICAL RECORD",
+			"item": [
+				{
+					"name": "Сreate Medical Record",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 1,\n  \"userId\": 1,\n  \"title\": \"Illness Treatment\",\n  \"date\": \"2023-11-01\",\n  \"description\": \"Treatment for a flu\",\n  \"doctorNotes\": \"Take rest for a week\",\n  \"type\": \"ILLNESS\",\n  \"licenseNumber\": \"12345-AB\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/medicalrecords",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"medicalrecords"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get medical record by user id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 1,\n  \"userId\": 1,\n  \"title\": \"Illness Treatment\",\n  \"date\": \"2023-11-01\",\n  \"description\": \"Treatment for a flu\",\n  \"doctorNotes\": \"Take rest for a week\",\n  \"type\": \"ILLNESS\",\n  \"licenseNumber\": \"12345-AB\"\n}\n"
+						},
+						"url": {
+							"raw": "localhost:8080/medicalrecords/user/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"medicalrecords",
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get medical record by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 1,\n  \"userId\": 1,\n  \"title\": \"Illness Treatment\",\n  \"date\": \"2023-11-01\",\n  \"description\": \"Treatment for a flu\",\n  \"doctorNotes\": \"Take rest for a week\",\n  \"type\": \"ILLNESS\",\n  \"licenseNumber\": \"12345-AB\"\n}\n"
+						},
+						"url": {
+							"raw": "localhost:8080/medicalrecords/6",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"medicalrecords",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update medical record",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userId\": 1,\n  \"licenseNumber\": \"12345-AB\",\n  \"title\": \"Updated Title\",\n  \"date\": \"2023-11-01\",\n  \"description\": \"Updated description\",\n  \"doctorNotes\": \"Updated doctor notes\",\n  \"type\": \"VACCINE\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/medicalrecords/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"medicalrecords",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete medical record",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userId\": 1,\n  \"licenseNumber\": \"12345-AB\",\n  \"title\": \"Updated Title\",\n  \"date\": \"2023-11-01\",\n  \"description\": \"Updated description\",\n  \"doctorNotes\": \"Updated doctor notes\",\n  \"type\": \"VACCINE\"\n}\n"
+						},
+						"url": {
+							"raw": "localhost:8080/medicalrecords/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"medicalrecords",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HEALTH METRICS",
+			"item": [
+				{
+					"name": "Create health metrics",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userId\": 6,\n  \"timestamp\": \"2023-11-01T10:30:00\",\n  \"bloodPressure\": \"120/80\",\n  \"bloodSugar\": 5.5,\n  \"temperature\": 36.6,\n  \"notes\": \"Feeling good\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/healthmetrics",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"healthmetrics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update health metrics",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userId\": 1,\n  \"timestamp\": \"2023-11-02T11:00:00\",\n  \"bloodPressure\": \"125/85\",\n  \"bloodSugar\": 6.0,\n  \"temperature\": 37.0,\n  \"notes\": \"Minor headache\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/healthmetrics/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"healthmetrics",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update part health metrics",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"bloodSugar\": 5.8,\n  \"temperature\": 36.9\n}\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/healthmetrics/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"healthmetrics",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get health metrics",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"bloodSugar\": 5.8,\n  \"temperature\": 36.9\n}\n\n"
+						},
+						"url": {
+							"raw": "localhost:8080/healthmetrics/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"healthmetrics",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete health metrics",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"bloodSugar\": 5.8,\n  \"temperature\": 36.9\n}\n\n"
+						},
+						"url": {
+							"raw": "localhost:8080/healthmetrics/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"healthmetrics",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "APPOINTMENTS",
+			"item": [
+				{
+					"name": "Create appointment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": 6,  \n    \"licenseNumber\": \"12345-AB\", \n    \"dateTime\": \"2025-10-01T10:00:00\", \n    \"notes\": \"General check-up\" \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/appointments",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"appointments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user appointments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/appointments/user/6",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"appointments",
+								"user",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete specific appointment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/appointments/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"appointments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete outdated",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/appointments/outdated",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"appointments",
+								"outdated"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update appointment",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/appointments/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"appointments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/appointments/1/complete",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"appointments",
+								"1",
+								"complete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ACTUATOR",
+			"item": [
+				{
+					"name": "Health",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Info",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
