@@ -1,100 +1,1282 @@
-2025-05-27 00:09:02 [main] INFO  by.rublevskaya.Main - Starting Main using Java 21.0.6 with PID 67085 (/Users/katusarublevsk/Desktop/JAVA/pet_project/pet_project/target/classes started by katusarublevsk in /Users/katusarublevsk/Desktop/JAVA/pet_project/pet_project)
-2025-05-27 00:09:02 [main] DEBUG by.rublevskaya.Main - Running with Spring Boot v3.1.3, Spring v6.0.11
-2025-05-27 00:09:02 [main] INFO  by.rublevskaya.Main - No active profile set, falling back to 1 default profile: "default"
-2025-05-27 00:09:02 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-05-27 00:09:02 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 31 ms. Found 8 JPA repository interfaces.
-2025-05-27 00:09:02 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2025-05-27 00:09:02 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-05-27 00:09:02 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
-2025-05-27 00:09:02 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-05-27 00:09:02 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 581 ms
-2025-05-27 00:09:03 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-27 00:09:03 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.7.Final
-2025-05-27 00:09:03 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
-2025-05-27 00:09:03 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
-2025-05-27 00:09:03 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-05-27 00:09:03 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-05-27 00:09:03 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5873f3f0
-2025-05-27 00:09:03 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-05-27 00:09:03 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
-2025-05-27 00:09:03 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2025-05-27 00:09:03 [main] DEBUG org.hibernate.SQL - 
+2025-05-29 00:00:00 [scheduling-1] INFO  b.r.task.AppointmentCleanupTask - Appointment cleanup task started.
+2025-05-29 00:00:00 [scheduling-1] INFO  b.r.service.AppointmentService - Starting cleanup of outdated appointments.
+2025-05-29 00:00:00 [scheduling-1] DEBUG org.hibernate.SQL - 
+    select
+        a1_0.id,
+        a1_0.completed,
+        a1_0.created_at,
+        a1_0.date_time,
+        a1_0.doctor_id,
+        a1_0.license_number,
+        a1_0.notes,
+        a1_0.updated_at,
+        a1_0.user_id 
+    from
+        medical_assistant.appointments a1_0 
+    where
+        a1_0.date_time<?
+2025-05-29 00:03:17 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-29 00:03:17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-05-29 00:03:17 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-05-29 00:03:19 [main] INFO  by.rublevskaya.Main - Starting Main using Java 21.0.6 with PID 16737 (/Users/katusarublevsk/Desktop/JAVA/pet_project/pet_project/target/classes started by katusarublevsk in /Users/katusarublevsk/Desktop/JAVA/pet_project/pet_project)
+2025-05-29 00:03:19 [main] DEBUG by.rublevskaya.Main - Running with Spring Boot v3.1.3, Spring v6.0.11
+2025-05-29 00:03:19 [main] INFO  by.rublevskaya.Main - No active profile set, falling back to 1 default profile: "default"
+2025-05-29 00:03:19 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-29 00:03:19 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 28 ms. Found 8 JPA repository interfaces.
+2025-05-29 00:03:19 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-05-29 00:03:19 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-29 00:03:19 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+2025-05-29 00:03:19 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-05-29 00:03:19 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 737 ms
+2025-05-29 00:03:20 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.16.3 by Redgate
+2025-05-29 00:03:20 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2025-05-29 00:03:20 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2025-05-29 00:03:20 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-05-29 00:03:20 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2fba0dac
+2025-05-29 00:03:20 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-05-29 00:03:20 [main] INFO  o.f.c.i.d.base.BaseDatabaseType - Database: jdbc:postgresql://localhost:5432/postgres (PostgreSQL 17.2)
+2025-05-29 00:03:20 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 17.2 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2025-05-29 00:03:20 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.012s)
+2025-05-29 00:03:20 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "medical_assistant": 1
+2025-05-29 00:03:20 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "medical_assistant" is up to date. No migration necessary.
+2025-05-29 00:03:20 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-29 00:03:20 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.7.Final
+2025-05-29 00:03:20 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2025-05-29 00:03:20 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2025-05-29 00:03:20 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-29 00:03:20 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2025-05-29 00:03:20 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-05-29 00:03:20 [main] DEBUG org.hibernate.SQL - 
     alter table if exists medical_assistant.appointments 
        alter column created_at set data type timestamp(6)
-2025-05-27 00:09:03 [main] DEBUG org.hibernate.SQL - 
+2025-05-29 00:03:20 [main] DEBUG org.hibernate.SQL - 
     alter table if exists medical_assistant.appointments 
        alter column date_time set data type timestamp(6)
-2025-05-27 00:09:03 [main] DEBUG org.hibernate.SQL - 
+2025-05-29 00:03:20 [main] DEBUG org.hibernate.SQL - 
     alter table if exists medical_assistant.appointments 
        alter column updated_at set data type timestamp(6)
-2025-05-27 00:09:03 [main] DEBUG org.hibernate.SQL - 
+2025-05-29 00:03:20 [main] DEBUG org.hibernate.SQL - 
     alter table if exists medical_assistant.clinics 
        alter column created_at set data type timestamp(6)
-2025-05-27 00:09:03 [main] DEBUG org.hibernate.SQL - 
+2025-05-29 00:03:20 [main] DEBUG org.hibernate.SQL - 
     alter table if exists medical_assistant.clinics 
        alter column updated_at set data type timestamp(6)
-2025-05-27 00:09:03 [main] DEBUG org.hibernate.SQL - 
+2025-05-29 00:03:20 [main] DEBUG org.hibernate.SQL - 
     alter table if exists medical_assistant.doctors 
        alter column created_at set data type timestamp(6)
-2025-05-27 00:09:03 [main] DEBUG org.hibernate.SQL - 
+2025-05-29 00:03:20 [main] DEBUG org.hibernate.SQL - 
     alter table if exists medical_assistant.doctors 
        alter column updated_at set data type timestamp(6)
-2025-05-27 00:09:03 [main] DEBUG org.hibernate.SQL - 
+2025-05-29 00:03:20 [main] DEBUG org.hibernate.SQL - 
     alter table if exists medical_assistant.health_metrics 
        alter column blood_sugar set data type float(53)
-2025-05-27 00:09:03 [main] DEBUG org.hibernate.SQL - 
+2025-05-29 00:03:20 [main] DEBUG org.hibernate.SQL - 
     alter table if exists medical_assistant.health_metrics 
        alter column created_at set data type timestamp(6)
-2025-05-27 00:09:03 [main] DEBUG org.hibernate.SQL - 
+2025-05-29 00:03:20 [main] DEBUG org.hibernate.SQL - 
     alter table if exists medical_assistant.health_metrics 
        alter column temperature set data type float(53)
-2025-05-27 00:09:03 [main] DEBUG org.hibernate.SQL - 
+2025-05-29 00:03:20 [main] DEBUG org.hibernate.SQL - 
     alter table if exists medical_assistant.health_metrics 
        alter column timestamp set data type timestamp(6)
-2025-05-27 00:09:03 [main] DEBUG org.hibernate.SQL - 
+2025-05-29 00:03:20 [main] DEBUG org.hibernate.SQL - 
     alter table if exists medical_assistant.health_metrics 
        alter column updated_at set data type timestamp(6)
-2025-05-27 00:09:03 [main] DEBUG org.hibernate.SQL - 
+2025-05-29 00:03:20 [main] DEBUG org.hibernate.SQL - 
     alter table if exists medical_assistant.medical_records 
        alter column created_at set data type timestamp(6)
-2025-05-27 00:09:03 [main] DEBUG org.hibernate.SQL - 
+2025-05-29 00:03:20 [main] DEBUG org.hibernate.SQL - 
     alter table if exists medical_assistant.medical_records 
        alter column updated_at set data type timestamp(6)
-2025-05-27 00:09:03 [main] DEBUG org.hibernate.SQL - 
+2025-05-29 00:03:20 [main] DEBUG org.hibernate.SQL - 
     alter table if exists medical_assistant.medications 
        alter column created_at set data type timestamp(6)
-2025-05-27 00:09:03 [main] DEBUG org.hibernate.SQL - 
+2025-05-29 00:03:20 [main] DEBUG org.hibernate.SQL - 
     alter table if exists medical_assistant.medications 
        alter column end_date set data type timestamp(6)
-2025-05-27 00:09:03 [main] DEBUG org.hibernate.SQL - 
+2025-05-29 00:03:20 [main] DEBUG org.hibernate.SQL - 
     alter table if exists medical_assistant.medications 
        alter column start_date set data type timestamp(6)
-2025-05-27 00:09:03 [main] DEBUG org.hibernate.SQL - 
+2025-05-29 00:03:20 [main] DEBUG org.hibernate.SQL - 
     alter table if exists medical_assistant.medications 
        alter column updated_at set data type timestamp(6)
-2025-05-27 00:09:03 [main] DEBUG org.hibernate.SQL - 
+2025-05-29 00:03:20 [main] DEBUG org.hibernate.SQL - 
     alter table if exists medical_assistant.security 
        alter column created set data type timestamp(6)
-2025-05-27 00:09:03 [main] DEBUG org.hibernate.SQL - 
+2025-05-29 00:03:20 [main] DEBUG org.hibernate.SQL - 
     alter table if exists medical_assistant.security 
        alter column updated set data type timestamp(6)
-2025-05-27 00:09:03 [main] DEBUG org.hibernate.SQL - 
+2025-05-29 00:03:20 [main] DEBUG org.hibernate.SQL - 
     alter table if exists medical_assistant.users 
        alter column created_at set data type timestamp(6)
-2025-05-27 00:09:03 [main] DEBUG org.hibernate.SQL - 
+2025-05-29 00:03:20 [main] DEBUG org.hibernate.SQL - 
     alter table if exists medical_assistant.users 
        alter column updated_at set data type timestamp(6)
-2025-05-27 00:09:03 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-05-27 00:09:04 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-05-27 00:09:04 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2025-05-27 00:09:04 [main] INFO  by.rublevskaya.Main - Started Main in 2.016 seconds (process running for 2.409)
-2025-05-27 00:09:17 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-27 00:09:17 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-05-27 00:09:17 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-2025-05-27 00:09:17 [http-nio-8080-exec-2] INFO  b.r.interceptor.LogInterceptor - IN: Request: /users
-2025-05-27 00:09:17 [http-nio-8080-exec-2] INFO  b.r.controller.UserCrudController - Fetching all users...
-2025-05-27 00:09:17 [http-nio-8080-exec-2] INFO  b.r.service.UserCrudService - Fetching all users.
-2025-05-27 00:09:17 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+2025-05-29 00:03:20 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-29 00:03:21 [main] INFO  b.rublevskaya.security.jwt.JwtFilter - JwtFilter created
+2025-05-29 00:03:21 [main] DEBUG b.rublevskaya.security.jwt.JwtFilter - Filter 'jwtFilter' configured for use
+2025-05-29 00:03:21 [main] INFO  b.r.security.SecurityConfig - SecurityConfig created with JWTFilter:
+2025-05-29 00:03:21 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-29 00:03:21 [main] DEBUG o.s.s.c.a.a.c.AuthenticationConfiguration$DefaultPasswordEncoderAuthenticationManagerBuilder - No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2025-05-29 00:03:21 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2025-05-29 00:03:21 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3325f17, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@35e63d26, org.springframework.security.web.context.SecurityContextHolderFilter@7b186fb8, org.springframework.security.web.header.HeaderWriterFilter@205d6f84, org.springframework.security.web.authentication.logout.LogoutFilter@6d92bfaf, by.rublevskaya.security.jwt.JwtFilter@20524816, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1ae8556c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@47184859, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5d51203b, org.springframework.security.web.session.SessionManagementFilter@7e474bd, org.springframework.security.web.access.ExceptionTranslationFilter@c1d9c40, org.springframework.security.web.access.intercept.AuthorizationFilter@b3c7c75]
+2025-05-29 00:03:21 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-05-29 00:03:21 [main] INFO  by.rublevskaya.Main - Started Main in 2.531 seconds (process running for 2.777)
+2025-05-29 00:03:28 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-29 00:03:28 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-05-29 00:03:28 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-05-29 00:03:28 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing POST /auth/login
+2025-05-29 00:03:28 [http-nio-8080-exec-2] WARN  b.rublevskaya.security.jwt.JwtFilter - No valid Authorization header found
+2025-05-29 00:03:28 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-05-29 00:03:28 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured POST /auth/login
+2025-05-29 00:03:28 [http-nio-8080-exec-2] INFO  b.r.interceptor.LogInterceptor - IN: Request: /auth/login
+2025-05-29 00:03:28 [http-nio-8080-exec-2] INFO  b.r.controller.AuthController - Received login request for user: SOTNICOV2511
+2025-05-29 00:03:28 [http-nio-8080-exec-2] INFO  by.rublevskaya.service.AuthService - Attempting to log in user
+2025-05-29 00:03:28 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.created,
+        s1_0.login,
+        s1_0.password,
+        s1_0.role,
+        s1_0.updated,
+        s1_0.user_id 
+    from
+        medical_assistant.security s1_0 
+    where
+        s1_0.login=?
+2025-05-29 00:03:28 [http-nio-8080-exec-2] INFO  by.rublevskaya.service.AuthService - User 'SOTNICOV2511' successfully logged in and token generated.
+2025-05-29 00:03:28 [http-nio-8080-exec-2] INFO  b.r.controller.AuthController - Login successful for user: SOTNICOV2511
+2025-05-29 00:03:28 [http-nio-8080-exec-2] INFO  b.r.interceptor.LogInterceptor - OUT: Request: /auth/login
+2025-05-29 00:03:28 [http-nio-8080-exec-2] INFO  b.r.interceptor.LogInterceptor - COMPLETED: Request: /auth/login
+2025-05-29 00:03:46 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing PUT /doctors/12
+2025-05-29 00:03:46 [http-nio-8080-exec-3] INFO  b.rublevskaya.security.jwt.JwtFilter - Extracted token: eyJhbGciOi...
+2025-05-29 00:03:46 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.created,
+        s1_0.login,
+        s1_0.password,
+        s1_0.role,
+        s1_0.updated,
+        s1_0.user_id 
+    from
+        medical_assistant.security s1_0 
+    where
+        s1_0.login=?
+2025-05-29 00:03:46 [http-nio-8080-exec-3] INFO  b.rublevskaya.security.jwt.JwtFilter - User SOTNICOV2511 authenticated successfully with role ROLE_USER
+2025-05-29 00:41:54 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m4s112ms).
+2025-05-29 00:58:26 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m55s719ms).
+2025-05-29 01:14:21 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m54s930ms).
+2025-05-29 01:30:16 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m55s753ms).
+2025-05-29 01:46:42 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m55s783ms).
+2025-05-29 01:54:18 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m35s622ms).
+2025-05-29 02:10:30 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m41s977ms).
+2025-05-29 02:26:32 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m2s35ms).
+2025-05-29 02:43:42 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m10s404ms).
+2025-05-29 03:18:30 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=34m18s383ms).
+2025-05-29 03:34:31 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m237ms).
+2025-05-29 03:50:21 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m50s252ms).
+2025-05-29 03:55:31 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m39s918ms).
+2025-05-29 04:11:26 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m54s959ms).
+2025-05-29 04:27:52 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m55s624ms).
+2025-05-29 04:43:47 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m55s660ms).
+2025-05-29 04:56:40 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=12m22s336ms).
+2025-05-29 05:12:34 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m54s691ms).
+2025-05-29 05:28:30 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m55s729ms).
+2025-05-29 05:44:45 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m45s377ms).
+2025-05-29 05:57:19 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=12m34s8ms).
+2025-05-29 06:13:20 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m30s864ms).
+2025-05-29 06:29:16 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m55s713ms).
+2025-05-29 06:45:12 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m55s787ms).
+2025-05-29 06:58:30 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=12m48s226ms).
+2025-05-29 07:14:26 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m55s733ms).
+2025-05-29 07:30:51 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m55s729ms).
+2025-05-29 07:46:31 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m39s132ms).
+2025-05-29 07:59:33 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=12m32s531ms).
+2025-05-29 08:02:46 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m12s875ms).
+2025-05-29 08:18:42 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m55s671ms).
+2025-05-29 08:36:02 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m20s834ms).
+2025-05-29 09:00:13 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=24m10s842ms).
+2025-05-29 09:16:15 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m1s706ms).
+2025-05-29 09:32:41 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m55s703ms).
+2025-05-29 09:48:23 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m42s399ms).
+2025-05-29 10:01:13 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=12m49s830ms).
+2025-05-29 10:17:32 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m48s922ms).
+2025-05-29 10:33:04 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m31s864ms).
+2025-05-29 10:49:29 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m55s675ms).
+2025-05-29 11:02:23 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=12m54s1ms).
+2025-05-29 11:18:49 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m55s722ms).
+2025-05-29 11:34:45 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m55s746ms).
+2025-05-29 11:50:41 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m55s750ms).
+2025-05-29 12:03:31 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=12m20s374ms).
+2025-05-29 12:19:57 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m55s724ms).
+2025-05-29 12:30:09 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-29 12:30:09 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-05-29 12:30:09 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-05-29 13:02:02 [main] INFO  by.rublevskaya.Main - Starting Main using Java 21.0.6 with PID 17809 (/Users/katusarublevsk/Desktop/JAVA/pet_project/pet_project/target/classes started by katusarublevsk in /Users/katusarublevsk/Desktop/JAVA/pet_project/pet_project)
+2025-05-29 13:02:02 [main] DEBUG by.rublevskaya.Main - Running with Spring Boot v3.1.3, Spring v6.0.11
+2025-05-29 13:02:02 [main] INFO  by.rublevskaya.Main - No active profile set, falling back to 1 default profile: "default"
+2025-05-29 13:02:02 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-29 13:02:02 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 24 ms. Found 8 JPA repository interfaces.
+2025-05-29 13:02:02 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-05-29 13:02:02 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-29 13:02:02 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+2025-05-29 13:02:02 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-05-29 13:02:02 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 781 ms
+2025-05-29 13:02:02 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.16.3 by Redgate
+2025-05-29 13:02:02 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2025-05-29 13:02:02 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2025-05-29 13:02:02 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-05-29 13:02:03 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@70f4f89e
+2025-05-29 13:02:03 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-05-29 13:02:03 [main] INFO  o.f.c.i.d.base.BaseDatabaseType - Database: jdbc:postgresql://localhost:5432/postgres (PostgreSQL 17.2)
+2025-05-29 13:02:03 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 17.2 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2025-05-29 13:02:03 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.017s)
+2025-05-29 13:02:03 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "medical_assistant": 1
+2025-05-29 13:02:03 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "medical_assistant" is up to date. No migration necessary.
+2025-05-29 13:02:03 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-29 13:02:03 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.7.Final
+2025-05-29 13:02:03 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2025-05-29 13:02:03 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2025-05-29 13:02:03 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-29 13:02:03 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2025-05-29 13:02:03 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-05-29 13:02:03 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.appointments 
+       alter column created_at set data type timestamp(6)
+2025-05-29 13:02:03 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.appointments 
+       alter column date_time set data type timestamp(6)
+2025-05-29 13:02:03 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.appointments 
+       alter column updated_at set data type timestamp(6)
+2025-05-29 13:02:03 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.clinics 
+       alter column created_at set data type timestamp(6)
+2025-05-29 13:02:03 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.clinics 
+       alter column updated_at set data type timestamp(6)
+2025-05-29 13:02:03 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.doctors 
+       alter column created_at set data type timestamp(6)
+2025-05-29 13:02:03 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.doctors 
+       alter column updated_at set data type timestamp(6)
+2025-05-29 13:02:03 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.health_metrics 
+       alter column blood_sugar set data type float(53)
+2025-05-29 13:02:03 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.health_metrics 
+       alter column created_at set data type timestamp(6)
+2025-05-29 13:02:03 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.health_metrics 
+       alter column temperature set data type float(53)
+2025-05-29 13:02:03 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.health_metrics 
+       alter column timestamp set data type timestamp(6)
+2025-05-29 13:02:03 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.health_metrics 
+       alter column updated_at set data type timestamp(6)
+2025-05-29 13:02:03 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.medical_records 
+       alter column created_at set data type timestamp(6)
+2025-05-29 13:02:03 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.medical_records 
+       alter column updated_at set data type timestamp(6)
+2025-05-29 13:02:03 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.medications 
+       alter column created_at set data type timestamp(6)
+2025-05-29 13:02:03 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.medications 
+       alter column end_date set data type timestamp(6)
+2025-05-29 13:02:03 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.medications 
+       alter column start_date set data type timestamp(6)
+2025-05-29 13:02:03 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.medications 
+       alter column updated_at set data type timestamp(6)
+2025-05-29 13:02:03 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.security 
+       alter column created set data type timestamp(6)
+2025-05-29 13:02:03 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.security 
+       alter column updated set data type timestamp(6)
+2025-05-29 13:02:03 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.users 
+       alter column created_at set data type timestamp(6)
+2025-05-29 13:02:03 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.users 
+       alter column updated_at set data type timestamp(6)
+2025-05-29 13:02:03 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-29 13:02:04 [main] INFO  b.rublevskaya.security.jwt.JwtFilter - JwtFilter created
+2025-05-29 13:02:04 [main] DEBUG b.rublevskaya.security.jwt.JwtFilter - Filter 'jwtFilter' configured for use
+2025-05-29 13:02:04 [main] INFO  b.r.security.SecurityConfig - SecurityConfig created with JWTFilter:
+2025-05-29 13:02:04 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-29 13:02:04 [main] DEBUG o.s.s.c.a.a.c.AuthenticationConfiguration$DefaultPasswordEncoderAuthenticationManagerBuilder - No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2025-05-29 13:02:04 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2025-05-29 13:02:04 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@77f1026e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1df8c7f4, org.springframework.security.web.context.SecurityContextHolderFilter@6ad2cb6d, org.springframework.security.web.header.HeaderWriterFilter@11564455, org.springframework.security.web.authentication.logout.LogoutFilter@736af6f3, by.rublevskaya.security.jwt.JwtFilter@15ade272, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@61868687, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@15d0f2a3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@75a6cdb, org.springframework.security.web.session.SessionManagementFilter@3d339541, org.springframework.security.web.access.ExceptionTranslationFilter@47184859, org.springframework.security.web.access.intercept.AuthorizationFilter@5eb89000]
+2025-05-29 13:02:04 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-05-29 13:02:04 [main] INFO  by.rublevskaya.Main - Started Main in 2.733 seconds (process running for 3.033)
+2025-05-29 13:02:19 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-29 13:02:19 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-05-29 13:02:19 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-05-29 13:02:19 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing POST /auth/login
+2025-05-29 13:02:19 [http-nio-8080-exec-2] WARN  b.rublevskaya.security.jwt.JwtFilter - No valid Authorization header found
+2025-05-29 13:02:19 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-05-29 13:02:20 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured POST /auth/login
+2025-05-29 13:02:20 [http-nio-8080-exec-2] INFO  b.r.interceptor.LogInterceptor - IN: Request: /auth/login
+2025-05-29 13:02:20 [http-nio-8080-exec-2] INFO  b.r.controller.AuthController - Received login request for user: SOTNICOV2511
+2025-05-29 13:02:20 [http-nio-8080-exec-2] INFO  by.rublevskaya.service.AuthService - Attempting to log in user
+2025-05-29 13:02:20 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.created,
+        s1_0.login,
+        s1_0.password,
+        s1_0.role,
+        s1_0.updated,
+        s1_0.user_id 
+    from
+        medical_assistant.security s1_0 
+    where
+        s1_0.login=?
+2025-05-29 13:02:20 [http-nio-8080-exec-2] INFO  by.rublevskaya.service.AuthService - User 'SOTNICOV2511' successfully logged in and token generated.
+2025-05-29 13:02:20 [http-nio-8080-exec-2] INFO  b.r.controller.AuthController - Login successful for user: SOTNICOV2511
+2025-05-29 13:02:20 [http-nio-8080-exec-2] INFO  b.r.interceptor.LogInterceptor - OUT: Request: /auth/login
+2025-05-29 13:02:20 [http-nio-8080-exec-2] INFO  b.r.interceptor.LogInterceptor - COMPLETED: Request: /auth/login
+2025-05-29 13:02:30 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing GET /clinics
+2025-05-29 13:02:30 [http-nio-8080-exec-3] WARN  b.rublevskaya.security.jwt.JwtFilter - No valid Authorization header found
+2025-05-29 13:02:30 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-05-29 13:02:30 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured GET /clinics
+2025-05-29 13:02:30 [http-nio-8080-exec-3] INFO  b.r.interceptor.LogInterceptor - IN: Request: /clinics
+2025-05-29 13:02:30 [http-nio-8080-exec-3] INFO  b.r.controller.ClinicController - Fetching all clinics
+2025-05-29 13:02:30 [http-nio-8080-exec-3] INFO  b.rublevskaya.service.ClinicService - Retrieving a list of all clinics.
+2025-05-29 13:02:30 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        c1_0.id,
+        c1_0.address,
+        c1_0.created_at,
+        c1_0.name,
+        c1_0.phone,
+        c1_0.updated_at 
+    from
+        medical_assistant.clinics c1_0
+2025-05-29 13:02:30 [http-nio-8080-exec-3] INFO  b.rublevskaya.service.ClinicService - Successfully retrieved 4 clinics.
+2025-05-29 13:02:30 [http-nio-8080-exec-3] INFO  by.rublevskaya.mapper.ClinicMapper - Mapping list of Clinic entities to list of ClinicResponseDto. Total clinics: 4
+2025-05-29 13:02:30 [http-nio-8080-exec-3] INFO  by.rublevskaya.mapper.ClinicMapper - Mapping Clinic entity to ClinicResponseDto: Clinic(id=3, name=Лечебный центр здоровья Кати, address=г. Минск, ул. Приморская, 15, phone=+375 29 123 45 67, createdAt=2025-05-25T19:40:39.903385, updatedAt=2025-05-25T19:43:24.981071)
+2025-05-29 13:02:30 [http-nio-8080-exec-3] INFO  by.rublevskaya.mapper.ClinicMapper - Mapped ClinicResponseDto: ClinicResponseDto(name=Лечебный центр здоровья Кати, address=г. Минск, ул. Приморская, 15, phone=+375 29 123 45 67)
+2025-05-29 13:02:30 [http-nio-8080-exec-3] INFO  by.rublevskaya.mapper.ClinicMapper - Mapping Clinic entity to ClinicResponseDto: Clinic(id=5, name=Alpha Clinic, address=123 Main Street, phone=+123456789, createdAt=2025-05-26T21:15:02.650656, updatedAt=2025-05-26T21:15:02.650744)
+2025-05-29 13:02:30 [http-nio-8080-exec-3] INFO  by.rublevskaya.mapper.ClinicMapper - Mapped ClinicResponseDto: ClinicResponseDto(name=Alpha Clinic, address=123 Main Street, phone=+123456789)
+2025-05-29 13:02:30 [http-nio-8080-exec-3] INFO  by.rublevskaya.mapper.ClinicMapper - Mapping Clinic entity to ClinicResponseDto: Clinic(id=6, name=Beta Clinic, address=456 Side Road, phone=+987654321, createdAt=2025-05-26T21:15:25.637993, updatedAt=2025-05-26T21:15:25.638033)
+2025-05-29 13:02:30 [http-nio-8080-exec-3] INFO  by.rublevskaya.mapper.ClinicMapper - Mapped ClinicResponseDto: ClinicResponseDto(name=Beta Clinic, address=456 Side Road, phone=+987654321)
+2025-05-29 13:02:30 [http-nio-8080-exec-3] INFO  by.rublevskaya.mapper.ClinicMapper - Mapping Clinic entity to ClinicResponseDto: Clinic(id=4, name=Updated Clinic Nameeeeee, address=123 Main Streeteeeeee, phone=+153456789, createdAt=2025-05-25T18:09:39.895320, updatedAt=2025-05-28T22:44:17.227441)
+2025-05-29 13:02:30 [http-nio-8080-exec-3] INFO  by.rublevskaya.mapper.ClinicMapper - Mapped ClinicResponseDto: ClinicResponseDto(name=Updated Clinic Nameeeeee, address=123 Main Streeteeeeee, phone=+153456789)
+2025-05-29 13:02:30 [http-nio-8080-exec-3] INFO  by.rublevskaya.mapper.ClinicMapper - Mapped list of ClinicResponseDto: [ClinicResponseDto(name=Лечебный центр здоровья Кати, address=г. Минск, ул. Приморская, 15, phone=+375 29 123 45 67), ClinicResponseDto(name=Alpha Clinic, address=123 Main Street, phone=+123456789), ClinicResponseDto(name=Beta Clinic, address=456 Side Road, phone=+987654321), ClinicResponseDto(name=Updated Clinic Nameeeeee, address=123 Main Streeteeeeee, phone=+153456789)]
+2025-05-29 13:02:30 [http-nio-8080-exec-3] INFO  b.r.controller.ClinicController - Retrieved 4 clinics
+2025-05-29 13:02:30 [http-nio-8080-exec-3] INFO  b.r.interceptor.LogInterceptor - OUT: Request: /clinics
+2025-05-29 13:02:30 [http-nio-8080-exec-3] INFO  b.r.interceptor.LogInterceptor - COMPLETED: Request: /clinics
+2025-05-29 13:02:34 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /clinics/1
+2025-05-29 13:02:34 [http-nio-8080-exec-4] WARN  b.rublevskaya.security.jwt.JwtFilter - No valid Authorization header found
+2025-05-29 13:02:34 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-05-29 13:02:34 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Secured GET /clinics/1
+2025-05-29 13:02:34 [http-nio-8080-exec-4] INFO  b.r.interceptor.LogInterceptor - IN: Request: /clinics/1
+2025-05-29 13:02:34 [http-nio-8080-exec-4] INFO  b.r.controller.ClinicController - Fetching clinic with ID: 1
+2025-05-29 13:02:34 [http-nio-8080-exec-4] INFO  b.rublevskaya.service.ClinicService - Fetching details for clinic with ID: 1
+2025-05-29 13:02:34 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - 
+    select
+        c1_0.id,
+        c1_0.address,
+        c1_0.created_at,
+        c1_0.name,
+        c1_0.phone,
+        c1_0.updated_at 
+    from
+        medical_assistant.clinics c1_0 
+    where
+        c1_0.id=?
+2025-05-29 13:02:34 [http-nio-8080-exec-4] WARN  b.rublevskaya.service.ClinicService - Clinic with ID 1 not found.
+2025-05-29 13:02:34 [http-nio-8080-exec-4] INFO  b.r.interceptor.LogInterceptor - COMPLETED: Request: /clinics/1
+2025-05-29 13:02:41 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing PUT /clinics/1
+2025-05-29 13:02:41 [http-nio-8080-exec-6] WARN  b.rublevskaya.security.jwt.JwtFilter - No valid Authorization header found
+2025-05-29 13:02:41 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-05-29 13:03:01 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing PUT /clinics/1
+2025-05-29 13:03:01 [http-nio-8080-exec-7] INFO  b.rublevskaya.security.jwt.JwtFilter - Extracted token: eyJhbGciOi...
+2025-05-29 13:03:01 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.created,
+        s1_0.login,
+        s1_0.password,
+        s1_0.role,
+        s1_0.updated,
+        s1_0.user_id 
+    from
+        medical_assistant.security s1_0 
+    where
+        s1_0.login=?
+2025-05-29 13:03:01 [http-nio-8080-exec-7] INFO  b.rublevskaya.security.jwt.JwtFilter - User SOTNICOV2511 authenticated successfully with role ROLE_USER
+2025-05-29 13:03:10 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /medications/user/6
+2025-05-29 13:03:10 [http-nio-8080-exec-8] WARN  b.rublevskaya.security.jwt.JwtFilter - No valid Authorization header found
+2025-05-29 13:03:10 [http-nio-8080-exec-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-05-29 13:03:29 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /medications/user/6
+2025-05-29 13:03:29 [http-nio-8080-exec-9] INFO  b.rublevskaya.security.jwt.JwtFilter - Extracted token: eyJhbGciOi...
+2025-05-29 13:03:29 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.created,
+        s1_0.login,
+        s1_0.password,
+        s1_0.role,
+        s1_0.updated,
+        s1_0.user_id 
+    from
+        medical_assistant.security s1_0 
+    where
+        s1_0.login=?
+2025-05-29 13:03:29 [http-nio-8080-exec-9] INFO  b.rublevskaya.security.jwt.JwtFilter - User SOTNICOV2511 authenticated successfully with role ROLE_USER
+2025-05-29 13:03:29 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /medications/user/6
+2025-05-29 13:03:29 [http-nio-8080-exec-9] INFO  b.r.interceptor.LogInterceptor - IN: Request: /medications/user/6
+2025-05-29 13:03:29 [http-nio-8080-exec-9] INFO  b.r.controller.MedicationController - Fetching medications for user ID: 6
+2025-05-29 13:03:29 [http-nio-8080-exec-9] INFO  b.r.service.MedicationCrudService - Fetching medications for User ID: 6
+2025-05-29 13:03:29 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.active,
+        m1_0.created_at,
+        m1_0.dosage,
+        m1_0.end_date,
+        m1_0.name,
+        m1_0.start_date,
+        m1_0.updated_at,
+        m1_0.user_id 
+    from
+        medical_assistant.medications m1_0 
+    where
+        m1_0.user_id=?
+2025-05-29 13:03:29 [http-nio-8080-exec-9] INFO  b.r.mapper.MedicationMapper - Mapping Medication entity to MedicationResponseDto: Medication(id=6, userId=6, name=Moscino, dosage=100mg, startDate=2025-01-01T09:30, endDate=2025-12-01T09:30, active=true, createdAt=2025-05-26T00:21:34.571463, updatedAt=2025-05-26T00:21:34.571500)
+2025-05-29 13:03:29 [http-nio-8080-exec-9] INFO  b.r.mapper.MedicationMapper - Mapped MedicationResponseDto: MedicationResponseDto(userId=6, name=Moscino, dosage=100mg, startDate=2025-01-01T09:30, endDate=2025-12-01T09:30, active=true)
+2025-05-29 13:03:29 [http-nio-8080-exec-9] INFO  b.r.controller.MedicationController - Retrieved 1 medications for user ID: 6
+2025-05-29 13:03:29 [http-nio-8080-exec-9] INFO  b.r.interceptor.LogInterceptor - OUT: Request: /medications/user/6
+2025-05-29 13:03:29 [http-nio-8080-exec-9] INFO  b.r.interceptor.LogInterceptor - COMPLETED: Request: /medications/user/6
+2025-05-29 13:03:35 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /medications/user/7
+2025-05-29 13:03:35 [http-nio-8080-exec-10] INFO  b.rublevskaya.security.jwt.JwtFilter - Extracted token: eyJhbGciOi...
+2025-05-29 13:03:35 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.created,
+        s1_0.login,
+        s1_0.password,
+        s1_0.role,
+        s1_0.updated,
+        s1_0.user_id 
+    from
+        medical_assistant.security s1_0 
+    where
+        s1_0.login=?
+2025-05-29 13:03:35 [http-nio-8080-exec-10] INFO  b.rublevskaya.security.jwt.JwtFilter - User SOTNICOV2511 authenticated successfully with role ROLE_USER
+2025-05-29 13:03:35 [http-nio-8080-exec-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /medications/user/7
+2025-05-29 13:03:35 [http-nio-8080-exec-10] INFO  b.r.interceptor.LogInterceptor - IN: Request: /medications/user/7
+2025-05-29 13:03:35 [http-nio-8080-exec-10] INFO  b.r.controller.MedicationController - Fetching medications for user ID: 7
+2025-05-29 13:03:35 [http-nio-8080-exec-10] INFO  b.r.service.MedicationCrudService - Fetching medications for User ID: 7
+2025-05-29 13:03:35 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - 
+    select
+        m1_0.id,
+        m1_0.active,
+        m1_0.created_at,
+        m1_0.dosage,
+        m1_0.end_date,
+        m1_0.name,
+        m1_0.start_date,
+        m1_0.updated_at,
+        m1_0.user_id 
+    from
+        medical_assistant.medications m1_0 
+    where
+        m1_0.user_id=?
+2025-05-29 13:03:35 [http-nio-8080-exec-10] INFO  b.r.mapper.MedicationMapper - Mapping Medication entity to MedicationResponseDto: Medication(id=3, userId=7, name=парацетамол, dosage=1050mg, startDate=2025-02-01T09:30, endDate=2025-12-01T10:30, active=true, createdAt=2025-05-14T18:48:37.560572, updatedAt=2025-05-14T18:48:37.560691)
+2025-05-29 13:03:35 [http-nio-8080-exec-10] INFO  b.r.mapper.MedicationMapper - Mapped MedicationResponseDto: MedicationResponseDto(userId=7, name=парацетамол, dosage=1050mg, startDate=2025-02-01T09:30, endDate=2025-12-01T10:30, active=true)
+2025-05-29 13:03:35 [http-nio-8080-exec-10] INFO  b.r.mapper.MedicationMapper - Mapping Medication entity to MedicationResponseDto: Medication(id=4, userId=7, name=парацетамоличек, dosage=1050mg, startDate=2025-02-01T09:30, endDate=2025-12-01T10:30, active=true, createdAt=2025-05-14T18:56:41.328541, updatedAt=2025-05-14T18:56:41.328610)
+2025-05-29 13:03:35 [http-nio-8080-exec-10] INFO  b.r.mapper.MedicationMapper - Mapped MedicationResponseDto: MedicationResponseDto(userId=7, name=парацетамоличек, dosage=1050mg, startDate=2025-02-01T09:30, endDate=2025-12-01T10:30, active=true)
+2025-05-29 13:03:35 [http-nio-8080-exec-10] INFO  b.r.controller.MedicationController - Retrieved 2 medications for user ID: 7
+2025-05-29 13:03:35 [http-nio-8080-exec-10] INFO  b.r.interceptor.LogInterceptor - OUT: Request: /medications/user/7
+2025-05-29 13:03:35 [http-nio-8080-exec-10] INFO  b.r.interceptor.LogInterceptor - COMPLETED: Request: /medications/user/7
+2025-05-29 13:03:56 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing PUT /users/17
+2025-05-29 13:03:56 [http-nio-8080-exec-1] INFO  b.rublevskaya.security.jwt.JwtFilter - Extracted token: eyJhbGciOi...
+2025-05-29 13:03:56 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.created,
+        s1_0.login,
+        s1_0.password,
+        s1_0.role,
+        s1_0.updated,
+        s1_0.user_id 
+    from
+        medical_assistant.security s1_0 
+    where
+        s1_0.login=?
+2025-05-29 13:03:56 [http-nio-8080-exec-1] INFO  b.rublevskaya.security.jwt.JwtFilter - User SOTNICOV2511 authenticated successfully with role ROLE_USER
+2025-05-29 13:03:56 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured PUT /users/17
+2025-05-29 13:03:56 [http-nio-8080-exec-1] INFO  b.r.interceptor.LogInterceptor - IN: Request: /users/17
+2025-05-29 13:03:56 [http-nio-8080-exec-1] INFO  b.r.controller.UserCrudController - Received update request for user with ID: 17 using data: by.rublevskaya.dto.user.UserDto@2c440d13
+2025-05-29 13:03:56 [http-nio-8080-exec-1] INFO  b.r.service.UserCrudService - Updating user with ID: 17
+2025-05-29 13:03:56 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birth_date,
+        u1_0.blood_type,
+        u1_0.created_at,
+        u1_0.doctor_id,
+        u1_0.email,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        medical_assistant.users u1_0 
+    where
+        u1_0.id=?
+2025-05-29 13:03:56 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.created,
+        s1_0.login,
+        s1_0.password,
+        s1_0.role,
+        s1_0.updated,
+        s1_0.user_id 
+    from
+        medical_assistant.security s1_0 
+    where
+        s1_0.id=?
+2025-05-29 13:03:56 [http-nio-8080-exec-1] INFO  b.r.service.UserCrudService - User successfully updated with ID: 17
+2025-05-29 13:03:56 [http-nio-8080-exec-1] INFO  by.rublevskaya.mapper.UserMapper - Mapping User entity to UserResponseDto: by.rublevskaya.model.User@401ace5
+2025-05-29 13:03:56 [http-nio-8080-exec-1] INFO  by.rublevskaya.mapper.UserMapper - Mapped UserResponseDto: by.rublevskaya.dto.user.UserResponseDto@40c70cb0
+2025-05-29 13:03:56 [http-nio-8080-exec-1] INFO  b.r.controller.UserCrudController - User with ID: 17 updated successfully: by.rublevskaya.dto.user.UserResponseDto@40c70cb0
+2025-05-29 13:03:56 [http-nio-8080-exec-1] INFO  b.r.interceptor.LogInterceptor - OUT: Request: /users/17
+2025-05-29 13:03:56 [http-nio-8080-exec-1] INFO  b.r.interceptor.LogInterceptor - COMPLETED: Request: /users/17
+2025-05-29 13:04:01 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing PUT /users/6
+2025-05-29 13:04:01 [http-nio-8080-exec-2] INFO  b.rublevskaya.security.jwt.JwtFilter - Extracted token: eyJhbGciOi...
+2025-05-29 13:04:02 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.created,
+        s1_0.login,
+        s1_0.password,
+        s1_0.role,
+        s1_0.updated,
+        s1_0.user_id 
+    from
+        medical_assistant.security s1_0 
+    where
+        s1_0.login=?
+2025-05-29 13:04:02 [http-nio-8080-exec-2] INFO  b.rublevskaya.security.jwt.JwtFilter - User SOTNICOV2511 authenticated successfully with role ROLE_USER
+2025-05-29 13:04:02 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured PUT /users/6
+2025-05-29 13:04:02 [http-nio-8080-exec-2] INFO  b.r.interceptor.LogInterceptor - IN: Request: /users/6
+2025-05-29 13:04:02 [http-nio-8080-exec-2] INFO  b.r.controller.UserCrudController - Received update request for user with ID: 6 using data: by.rublevskaya.dto.user.UserDto@7f0e161a
+2025-05-29 13:04:02 [http-nio-8080-exec-2] INFO  b.r.service.UserCrudService - Updating user with ID: 6
+2025-05-29 13:04:02 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birth_date,
+        u1_0.blood_type,
+        u1_0.created_at,
+        u1_0.doctor_id,
+        u1_0.email,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        medical_assistant.users u1_0 
+    where
+        u1_0.id=?
+2025-05-29 13:04:02 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birth_date,
+        u1_0.blood_type,
+        u1_0.created_at,
+        u1_0.doctor_id,
+        u1_0.email,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        medical_assistant.users u1_0 
+    where
+        u1_0.email=?
+2025-05-29 13:04:02 [http-nio-8080-exec-2] INFO  b.r.interceptor.LogInterceptor - COMPLETED: Request: /users/6
+2025-05-29 13:06:47 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-29 13:06:47 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-05-29 13:06:47 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-05-29 13:06:48 [main] INFO  by.rublevskaya.Main - Starting Main using Java 21.0.6 with PID 17857 (/Users/katusarublevsk/Desktop/JAVA/pet_project/pet_project/target/classes started by katusarublevsk in /Users/katusarublevsk/Desktop/JAVA/pet_project/pet_project)
+2025-05-29 13:06:48 [main] DEBUG by.rublevskaya.Main - Running with Spring Boot v3.1.3, Spring v6.0.11
+2025-05-29 13:06:48 [main] INFO  by.rublevskaya.Main - No active profile set, falling back to 1 default profile: "default"
+2025-05-29 13:06:48 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-29 13:06:49 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 30 ms. Found 8 JPA repository interfaces.
+2025-05-29 13:06:49 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-05-29 13:06:49 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-29 13:06:49 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+2025-05-29 13:06:49 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-05-29 13:06:49 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 730 ms
+2025-05-29 13:06:49 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.16.3 by Redgate
+2025-05-29 13:06:49 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2025-05-29 13:06:49 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2025-05-29 13:06:49 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-05-29 13:06:49 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4cb24e2
+2025-05-29 13:06:49 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-05-29 13:06:49 [main] INFO  o.f.c.i.d.base.BaseDatabaseType - Database: jdbc:postgresql://localhost:5432/postgres (PostgreSQL 17.2)
+2025-05-29 13:06:49 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 17.2 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2025-05-29 13:06:49 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.010s)
+2025-05-29 13:06:49 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "medical_assistant": 1
+2025-05-29 13:06:49 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "medical_assistant" is up to date. No migration necessary.
+2025-05-29 13:06:49 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-29 13:06:49 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.7.Final
+2025-05-29 13:06:49 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2025-05-29 13:06:49 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2025-05-29 13:06:49 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-29 13:06:49 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2025-05-29 13:06:50 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-05-29 13:06:50 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.appointments 
+       alter column created_at set data type timestamp(6)
+2025-05-29 13:06:50 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.appointments 
+       alter column date_time set data type timestamp(6)
+2025-05-29 13:06:50 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.appointments 
+       alter column updated_at set data type timestamp(6)
+2025-05-29 13:06:50 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.clinics 
+       alter column created_at set data type timestamp(6)
+2025-05-29 13:06:50 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.clinics 
+       alter column updated_at set data type timestamp(6)
+2025-05-29 13:06:50 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.doctors 
+       alter column created_at set data type timestamp(6)
+2025-05-29 13:06:50 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.doctors 
+       alter column updated_at set data type timestamp(6)
+2025-05-29 13:06:50 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.health_metrics 
+       alter column blood_sugar set data type float(53)
+2025-05-29 13:06:50 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.health_metrics 
+       alter column created_at set data type timestamp(6)
+2025-05-29 13:06:50 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.health_metrics 
+       alter column temperature set data type float(53)
+2025-05-29 13:06:50 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.health_metrics 
+       alter column timestamp set data type timestamp(6)
+2025-05-29 13:06:50 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.health_metrics 
+       alter column updated_at set data type timestamp(6)
+2025-05-29 13:06:50 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.medical_records 
+       alter column created_at set data type timestamp(6)
+2025-05-29 13:06:50 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.medical_records 
+       alter column updated_at set data type timestamp(6)
+2025-05-29 13:06:50 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.medications 
+       alter column created_at set data type timestamp(6)
+2025-05-29 13:06:50 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.medications 
+       alter column end_date set data type timestamp(6)
+2025-05-29 13:06:50 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.medications 
+       alter column start_date set data type timestamp(6)
+2025-05-29 13:06:50 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.medications 
+       alter column updated_at set data type timestamp(6)
+2025-05-29 13:06:50 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.security 
+       alter column created set data type timestamp(6)
+2025-05-29 13:06:50 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.security 
+       alter column updated set data type timestamp(6)
+2025-05-29 13:06:50 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.users 
+       alter column created_at set data type timestamp(6)
+2025-05-29 13:06:50 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.users 
+       alter column updated_at set data type timestamp(6)
+2025-05-29 13:06:50 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-29 13:06:50 [main] INFO  b.rublevskaya.security.jwt.JwtFilter - JwtFilter created
+2025-05-29 13:06:50 [main] DEBUG b.rublevskaya.security.jwt.JwtFilter - Filter 'jwtFilter' configured for use
+2025-05-29 13:06:50 [main] INFO  b.r.security.SecurityConfig - SecurityConfig created with JWTFilter:
+2025-05-29 13:06:50 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-29 13:06:50 [main] DEBUG o.s.s.c.a.a.c.AuthenticationConfiguration$DefaultPasswordEncoderAuthenticationManagerBuilder - No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2025-05-29 13:06:50 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2025-05-29 13:06:50 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@23e54c8a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@276e5add, org.springframework.security.web.context.SecurityContextHolderFilter@2da3d7d3, org.springframework.security.web.header.HeaderWriterFilter@59b8a801, org.springframework.security.web.authentication.logout.LogoutFilter@6cbb79c3, by.rublevskaya.security.jwt.JwtFilter@6a7cbeed, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@47184859, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@12e3cf1c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@736af6f3, org.springframework.security.web.session.SessionManagementFilter@5f7dbdfa, org.springframework.security.web.access.ExceptionTranslationFilter@74f54f8e, org.springframework.security.web.access.intercept.AuthorizationFilter@5d51203b]
+2025-05-29 13:06:50 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-05-29 13:06:50 [main] INFO  by.rublevskaya.Main - Started Main in 2.529 seconds (process running for 2.789)
+2025-05-29 13:07:16 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-29 13:07:16 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-05-29 13:07:16 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-05-29 13:07:16 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Securing POST /auth/register-doctor
+2025-05-29 13:07:16 [http-nio-8080-exec-1] WARN  b.rublevskaya.security.jwt.JwtFilter - No valid Authorization header found
+2025-05-29 13:07:16 [http-nio-8080-exec-1] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-05-29 13:07:17 [http-nio-8080-exec-1] DEBUG o.s.security.web.FilterChainProxy - Secured POST /auth/register-doctor
+2025-05-29 13:07:17 [http-nio-8080-exec-1] INFO  b.r.interceptor.LogInterceptor - IN: Request: /auth/register-doctor
+2025-05-29 13:07:17 [http-nio-8080-exec-1] INFO  b.r.interceptor.LogInterceptor - COMPLETED: Request: /auth/register-doctor
+2025-05-29 13:08:10 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing POST /auth/register-doctor
+2025-05-29 13:08:10 [http-nio-8080-exec-3] WARN  b.rublevskaya.security.jwt.JwtFilter - No valid Authorization header found
+2025-05-29 13:08:10 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-05-29 13:08:10 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured POST /auth/register-doctor
+2025-05-29 13:08:10 [http-nio-8080-exec-3] INFO  b.r.interceptor.LogInterceptor - IN: Request: /auth/register-doctor
+2025-05-29 13:08:10 [http-nio-8080-exec-3] INFO  b.r.controller.AuthController - Received request to register doctor with data: by.rublevskaya.dto.doctor.DoctorDto@179f7207
+2025-05-29 13:08:10 [http-nio-8080-exec-3] INFO  by.rublevskaya.service.AuthService - Registering new doctor. Email: SEREGA@icloud.com, LicenseNumber: L1434456789
+2025-05-29 13:08:10 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        c1_0.id 
+    from
+        medical_assistant.clinics c1_0 
+    where
+        c1_0.name=? fetch first ? rows only
+2025-05-29 13:08:10 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        d1_0.id 
+    from
+        medical_assistant.doctors d1_0 
+    where
+        d1_0.license_number=? fetch first ? rows only
+2025-05-29 13:08:10 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        s1_0.id 
+    from
+        medical_assistant.security s1_0 
+    where
+        s1_0.login=? fetch first ? rows only
+2025-05-29 13:08:10 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        medical_assistant.users
+        (birth_date,blood_type,created_at,doctor_id,email,updated_at,username) 
+    values
+        (?,?,?,?,?,?,?)
+2025-05-29 13:08:10 [http-nio-8080-exec-3] INFO  by.rublevskaya.mapper.DoctorMapper - Mapping registration DoctorDto to Doctor entity: by.rublevskaya.dto.doctor.DoctorDto@179f7207
+2025-05-29 13:08:10 [http-nio-8080-exec-3] INFO  by.rublevskaya.mapper.DoctorMapper - Mapped Doctor entity from registration DTO: by.rublevskaya.model.Doctor@2634bc2b
+2025-05-29 13:08:10 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        medical_assistant.doctors
+        (clinic_name,created_at,full_name,is_active,license_number,specialty,updated_at,username) 
+    values
+        (?,?,?,?,?,?,?,?)
+2025-05-29 13:08:10 [http-nio-8080-exec-3] INFO  by.rublevskaya.service.AuthService - Doctor successfully registered. Doctor ID: 21
+2025-05-29 13:08:10 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        medical_assistant.security
+        (created,login,password,role,updated,user_id) 
+    values
+        (?,?,?,?,?,?)
+2025-05-29 13:08:10 [http-nio-8080-exec-3] INFO  b.r.controller.AuthController - Doctor registration successful for: by.rublevskaya.dto.doctor.DoctorDto@179f7207
+2025-05-29 13:08:10 [http-nio-8080-exec-3] INFO  b.r.interceptor.LogInterceptor - OUT: Request: /auth/register-doctor
+2025-05-29 13:08:10 [http-nio-8080-exec-3] INFO  b.r.interceptor.LogInterceptor - COMPLETED: Request: /auth/register-doctor
+2025-05-29 13:08:20 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing POST /auth/login
+2025-05-29 13:08:20 [http-nio-8080-exec-5] WARN  b.rublevskaya.security.jwt.JwtFilter - No valid Authorization header found
+2025-05-29 13:08:20 [http-nio-8080-exec-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-05-29 13:08:20 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured POST /auth/login
+2025-05-29 13:08:20 [http-nio-8080-exec-5] INFO  b.r.interceptor.LogInterceptor - IN: Request: /auth/login
+2025-05-29 13:08:20 [http-nio-8080-exec-5] INFO  b.r.controller.AuthController - Received login request for user: SEREGA
+2025-05-29 13:08:20 [http-nio-8080-exec-5] INFO  by.rublevskaya.service.AuthService - Attempting to log in user
+2025-05-29 13:08:21 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.created,
+        s1_0.login,
+        s1_0.password,
+        s1_0.role,
+        s1_0.updated,
+        s1_0.user_id 
+    from
+        medical_assistant.security s1_0 
+    where
+        s1_0.login=?
+2025-05-29 13:08:21 [http-nio-8080-exec-5] INFO  by.rublevskaya.service.AuthService - User 'SEREGA' successfully logged in and token generated.
+2025-05-29 13:08:21 [http-nio-8080-exec-5] INFO  b.r.controller.AuthController - Login successful for user: SEREGA
+2025-05-29 13:08:21 [http-nio-8080-exec-5] INFO  b.r.interceptor.LogInterceptor - OUT: Request: /auth/login
+2025-05-29 13:08:21 [http-nio-8080-exec-5] INFO  b.r.interceptor.LogInterceptor - COMPLETED: Request: /auth/login
+2025-05-29 13:08:40 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing POST /medicalrecords
+2025-05-29 13:08:40 [http-nio-8080-exec-6] WARN  b.rublevskaya.security.jwt.JwtFilter - No valid Authorization header found
+2025-05-29 13:08:40 [http-nio-8080-exec-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-05-29 13:08:52 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing POST /medicalrecords
+2025-05-29 13:08:52 [http-nio-8080-exec-7] INFO  b.rublevskaya.security.jwt.JwtFilter - Extracted token: eyJhbGciOi...
+2025-05-29 13:08:52 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.created,
+        s1_0.login,
+        s1_0.password,
+        s1_0.role,
+        s1_0.updated,
+        s1_0.user_id 
+    from
+        medical_assistant.security s1_0 
+    where
+        s1_0.login=?
+2025-05-29 13:08:52 [http-nio-8080-exec-7] INFO  b.rublevskaya.security.jwt.JwtFilter - User SEREGA authenticated successfully with role ROLE_DOCTOR
+2025-05-29 13:08:52 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured POST /medicalrecords
+2025-05-29 13:08:52 [http-nio-8080-exec-7] INFO  b.r.interceptor.LogInterceptor - IN: Request: /medicalrecords
+2025-05-29 13:08:52 [http-nio-8080-exec-7] INFO  b.r.c.MedicalRecordController - Received request to create medical record with data: MedicalRecordDto(userId=1, licenseNumber=12345-AB, title=Illness Treatment, date=2023-11-01, description=Treatment for a flu, doctorNotes=Take rest for a week, type=ILLNESS)
+2025-05-29 13:08:52 [http-nio-8080-exec-7] INFO  b.r.service.MedicalRecordCrudService - Creating a new medical record for User ID: 1, Doctor License: 12345-AB
+2025-05-29 13:08:52 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birth_date,
+        u1_0.blood_type,
+        u1_0.created_at,
+        u1_0.doctor_id,
+        u1_0.email,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        medical_assistant.users u1_0 
+    where
+        u1_0.id=?
+2025-05-29 13:08:52 [http-nio-8080-exec-7] WARN  b.r.service.MedicalRecordCrudService - User not found with ID: 1
+2025-05-29 13:08:52 [http-nio-8080-exec-7] INFO  b.r.interceptor.LogInterceptor - COMPLETED: Request: /medicalrecords
+2025-05-29 13:09:02 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing POST /medicalrecords
+2025-05-29 13:09:02 [http-nio-8080-exec-9] INFO  b.rublevskaya.security.jwt.JwtFilter - Extracted token: eyJhbGciOi...
+2025-05-29 13:09:02 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.created,
+        s1_0.login,
+        s1_0.password,
+        s1_0.role,
+        s1_0.updated,
+        s1_0.user_id 
+    from
+        medical_assistant.security s1_0 
+    where
+        s1_0.login=?
+2025-05-29 13:09:02 [http-nio-8080-exec-9] INFO  b.rublevskaya.security.jwt.JwtFilter - User SEREGA authenticated successfully with role ROLE_DOCTOR
+2025-05-29 13:09:02 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured POST /medicalrecords
+2025-05-29 13:09:02 [http-nio-8080-exec-9] INFO  b.r.interceptor.LogInterceptor - IN: Request: /medicalrecords
+2025-05-29 13:09:02 [http-nio-8080-exec-9] INFO  b.r.c.MedicalRecordController - Received request to create medical record with data: MedicalRecordDto(userId=17, licenseNumber=12345-AB, title=Illness Treatment, date=2023-11-01, description=Treatment for a flu, doctorNotes=Take rest for a week, type=ILLNESS)
+2025-05-29 13:09:02 [http-nio-8080-exec-9] INFO  b.r.service.MedicalRecordCrudService - Creating a new medical record for User ID: 17, Doctor License: 12345-AB
+2025-05-29 13:09:02 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birth_date,
+        u1_0.blood_type,
+        u1_0.created_at,
+        u1_0.doctor_id,
+        u1_0.email,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        medical_assistant.users u1_0 
+    where
+        u1_0.id=?
+2025-05-29 13:09:02 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        d1_0.id,
+        d1_0.clinic_name,
+        d1_0.created_at,
+        d1_0.full_name,
+        d1_0.is_active,
+        d1_0.license_number,
+        d1_0.specialty,
+        d1_0.updated_at,
+        d1_0.username 
+    from
+        medical_assistant.doctors d1_0 
+    where
+        d1_0.license_number=?
+2025-05-29 13:09:02 [http-nio-8080-exec-9] WARN  b.r.service.MedicalRecordCrudService - Doctor not found with license number: 12345-AB
+2025-05-29 13:09:02 [http-nio-8080-exec-9] INFO  b.r.interceptor.LogInterceptor - COMPLETED: Request: /medicalrecords
+2025-05-29 13:09:22 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing POST /medicalrecords
+2025-05-29 13:09:22 [http-nio-8080-exec-2] INFO  b.rublevskaya.security.jwt.JwtFilter - Extracted token: eyJhbGciOi...
+2025-05-29 13:09:22 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.created,
+        s1_0.login,
+        s1_0.password,
+        s1_0.role,
+        s1_0.updated,
+        s1_0.user_id 
+    from
+        medical_assistant.security s1_0 
+    where
+        s1_0.login=?
+2025-05-29 13:09:22 [http-nio-8080-exec-2] INFO  b.rublevskaya.security.jwt.JwtFilter - User SEREGA authenticated successfully with role ROLE_DOCTOR
+2025-05-29 13:09:22 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured POST /medicalrecords
+2025-05-29 13:09:22 [http-nio-8080-exec-2] INFO  b.r.interceptor.LogInterceptor - IN: Request: /medicalrecords
+2025-05-29 13:09:22 [http-nio-8080-exec-2] INFO  b.r.c.MedicalRecordController - Received request to create medical record with data: MedicalRecordDto(userId=17, licenseNumber=L1434456789, title=Illness Treatment, date=2023-11-01, description=Treatment for a flu, doctorNotes=Take rest for a week, type=ILLNESS)
+2025-05-29 13:09:22 [http-nio-8080-exec-2] INFO  b.r.service.MedicalRecordCrudService - Creating a new medical record for User ID: 17, Doctor License: L1434456789
+2025-05-29 13:09:22 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birth_date,
+        u1_0.blood_type,
+        u1_0.created_at,
+        u1_0.doctor_id,
+        u1_0.email,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        medical_assistant.users u1_0 
+    where
+        u1_0.id=?
+2025-05-29 13:09:22 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        d1_0.id,
+        d1_0.clinic_name,
+        d1_0.created_at,
+        d1_0.full_name,
+        d1_0.is_active,
+        d1_0.license_number,
+        d1_0.specialty,
+        d1_0.updated_at,
+        d1_0.username 
+    from
+        medical_assistant.doctors d1_0 
+    where
+        d1_0.license_number=?
+2025-05-29 13:09:22 [http-nio-8080-exec-2] INFO  b.r.mapper.MedicalRecordMapper - Mapping MedicalRecordDto to MedicalRecord entity: MedicalRecordDto(userId=17, licenseNumber=L1434456789, title=Illness Treatment, date=2023-11-01, description=Treatment for a flu, doctorNotes=Take rest for a week, type=ILLNESS)
+2025-05-29 13:09:22 [http-nio-8080-exec-2] INFO  b.r.mapper.MedicalRecordMapper - Mapped MedicalRecord entity: by.rublevskaya.model.MedicalRecord@5c949c53
+2025-05-29 13:09:22 [http-nio-8080-exec-2] DEBUG b.r.service.MedicalRecordCrudService - Mapped MedicalRecordDto to MedicalRecord entity: by.rublevskaya.model.MedicalRecord@5c949c53
+2025-05-29 13:09:22 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        medical_assistant.medical_records
+        (created_at,date,description,doctor_id,doctor_notes,title,type,updated_at,user_id) 
+    values
+        (?,?,?,?,?,?,?,?,?)
+2025-05-29 13:09:22 [http-nio-8080-exec-2] INFO  b.r.service.MedicalRecordCrudService - Medical record successfully created with ID: 5
+2025-05-29 13:09:22 [http-nio-8080-exec-2] INFO  b.r.mapper.MedicalRecordMapper - Mapping MedicalRecord entity to MedicalRecordResponseDto: by.rublevskaya.model.MedicalRecord@5c949c53
+2025-05-29 13:09:22 [http-nio-8080-exec-2] INFO  b.r.mapper.MedicalRecordMapper - Mapped MedicalRecordResponseDto: MedicalRecordResponseDto(title=Illness Treatment, date=2023-11-01, description=Treatment for a flu, doctorNotes=Take rest for a week, type=ILLNESS)
+2025-05-29 13:09:22 [http-nio-8080-exec-2] INFO  b.r.c.MedicalRecordController - Medical record created successfully: MedicalRecordResponseDto(title=Illness Treatment, date=2023-11-01, description=Treatment for a flu, doctorNotes=Take rest for a week, type=ILLNESS)
+2025-05-29 13:09:22 [http-nio-8080-exec-2] INFO  b.r.interceptor.LogInterceptor - OUT: Request: /medicalrecords
+2025-05-29 13:09:22 [http-nio-8080-exec-2] INFO  b.r.interceptor.LogInterceptor - COMPLETED: Request: /medicalrecords
+2025-05-29 13:24:44 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-29 13:24:44 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-05-29 13:24:44 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-05-29 13:24:47 [main] INFO  by.rublevskaya.Main - Starting Main using Java 21.0.6 with PID 17981 (/Users/katusarublevsk/Desktop/JAVA/pet_project/pet_project/target/classes started by katusarublevsk in /Users/katusarublevsk/Desktop/JAVA/pet_project/pet_project)
+2025-05-29 13:24:47 [main] DEBUG by.rublevskaya.Main - Running with Spring Boot v3.1.3, Spring v6.0.11
+2025-05-29 13:24:47 [main] INFO  by.rublevskaya.Main - No active profile set, falling back to 1 default profile: "default"
+2025-05-29 13:24:47 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-29 13:24:47 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 28 ms. Found 8 JPA repository interfaces.
+2025-05-29 13:24:47 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-05-29 13:24:48 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-29 13:24:48 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+2025-05-29 13:24:48 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-05-29 13:24:48 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 729 ms
+2025-05-29 13:24:48 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.16.3 by Redgate
+2025-05-29 13:24:48 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2025-05-29 13:24:48 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2025-05-29 13:24:48 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-05-29 13:24:48 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@69eb544f
+2025-05-29 13:24:48 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-05-29 13:24:48 [main] INFO  o.f.c.i.d.base.BaseDatabaseType - Database: jdbc:postgresql://localhost:5432/postgres (PostgreSQL 17.2)
+2025-05-29 13:24:48 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 17.2 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2025-05-29 13:24:48 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.011s)
+2025-05-29 13:24:48 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "medical_assistant": 1
+2025-05-29 13:24:48 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "medical_assistant" is up to date. No migration necessary.
+2025-05-29 13:24:48 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-29 13:24:48 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.7.Final
+2025-05-29 13:24:48 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2025-05-29 13:24:48 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2025-05-29 13:24:48 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-29 13:24:48 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2025-05-29 13:24:48 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-05-29 13:24:48 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.appointments 
+       alter column created_at set data type timestamp(6)
+2025-05-29 13:24:48 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.appointments 
+       alter column date_time set data type timestamp(6)
+2025-05-29 13:24:48 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.appointments 
+       alter column updated_at set data type timestamp(6)
+2025-05-29 13:24:48 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.clinics 
+       alter column created_at set data type timestamp(6)
+2025-05-29 13:24:48 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.clinics 
+       alter column updated_at set data type timestamp(6)
+2025-05-29 13:24:48 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.doctors 
+       alter column created_at set data type timestamp(6)
+2025-05-29 13:24:48 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.doctors 
+       alter column updated_at set data type timestamp(6)
+2025-05-29 13:24:48 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.health_metrics 
+       alter column blood_sugar set data type float(53)
+2025-05-29 13:24:48 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.health_metrics 
+       alter column created_at set data type timestamp(6)
+2025-05-29 13:24:48 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.health_metrics 
+       alter column temperature set data type float(53)
+2025-05-29 13:24:48 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.health_metrics 
+       alter column timestamp set data type timestamp(6)
+2025-05-29 13:24:48 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.health_metrics 
+       alter column updated_at set data type timestamp(6)
+2025-05-29 13:24:48 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.medical_records 
+       alter column created_at set data type timestamp(6)
+2025-05-29 13:24:48 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.medical_records 
+       alter column updated_at set data type timestamp(6)
+2025-05-29 13:24:48 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.medications 
+       alter column created_at set data type timestamp(6)
+2025-05-29 13:24:48 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.medications 
+       alter column end_date set data type timestamp(6)
+2025-05-29 13:24:48 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.medications 
+       alter column start_date set data type timestamp(6)
+2025-05-29 13:24:48 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.medications 
+       alter column updated_at set data type timestamp(6)
+2025-05-29 13:24:48 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.security 
+       alter column created set data type timestamp(6)
+2025-05-29 13:24:48 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.security 
+       alter column updated set data type timestamp(6)
+2025-05-29 13:24:48 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.users 
+       alter column created_at set data type timestamp(6)
+2025-05-29 13:24:48 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.users 
+       alter column updated_at set data type timestamp(6)
+2025-05-29 13:24:48 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-29 13:24:49 [main] INFO  b.rublevskaya.security.jwt.JwtFilter - JwtFilter created
+2025-05-29 13:24:49 [main] DEBUG b.rublevskaya.security.jwt.JwtFilter - Filter 'jwtFilter' configured for use
+2025-05-29 13:24:49 [main] INFO  b.r.security.SecurityConfig - SecurityConfig created with JWTFilter:
+2025-05-29 13:24:49 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-29 13:24:49 [main] DEBUG o.s.s.c.a.a.c.AuthenticationConfiguration$DefaultPasswordEncoderAuthenticationManagerBuilder - No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2025-05-29 13:24:49 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2025-05-29 13:24:49 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4a304820, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1b48784a, org.springframework.security.web.context.SecurityContextHolderFilter@12e3cf1c, org.springframework.security.web.header.HeaderWriterFilter@39bd07fe, org.springframework.security.web.authentication.logout.LogoutFilter@455591ad, by.rublevskaya.security.jwt.JwtFilter@1d208795, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@533a8540, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@37227aa7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7ab17cf, org.springframework.security.web.session.SessionManagementFilter@22781286, org.springframework.security.web.access.ExceptionTranslationFilter@5aa026e9, org.springframework.security.web.access.intercept.AuthorizationFilter@3b24fb6f]
+2025-05-29 13:24:49 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-05-29 13:24:49 [main] INFO  by.rublevskaya.Main - Started Main in 2.549 seconds (process running for 2.803)
+2025-05-29 13:25:02 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-29 13:25:02 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-05-29 13:25:02 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-05-29 13:25:02 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing POST /auth/login
+2025-05-29 13:25:02 [http-nio-8080-exec-2] WARN  b.rublevskaya.security.jwt.JwtFilter - No valid Authorization header found
+2025-05-29 13:25:02 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-05-29 13:25:02 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Secured POST /auth/login
+2025-05-29 13:25:02 [http-nio-8080-exec-2] INFO  b.r.interceptor.LogInterceptor - IN: Request: /auth/login
+2025-05-29 13:25:02 [http-nio-8080-exec-2] INFO  b.r.controller.AuthController - Received login request for user: SOTNICOV2511
+2025-05-29 13:25:02 [http-nio-8080-exec-2] INFO  by.rublevskaya.service.AuthService - Attempting to log in user
+2025-05-29 13:25:02 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.created,
+        s1_0.login,
+        s1_0.password,
+        s1_0.role,
+        s1_0.updated,
+        s1_0.user_id 
+    from
+        medical_assistant.security s1_0 
+    where
+        s1_0.login=?
+2025-05-29 13:25:02 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birth_date,
+        u1_0.blood_type,
+        u1_0.created_at,
+        u1_0.doctor_id,
+        u1_0.email,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        medical_assistant.users u1_0 
+    where
+        u1_0.username=?
+2025-05-29 13:25:02 [http-nio-8080-exec-2] INFO  by.rublevskaya.service.AuthService - User 'SOTNICOV2511' successfully logged in and token generated.
+2025-05-29 13:25:02 [http-nio-8080-exec-2] INFO  b.r.controller.AuthController - Login successful for user: SOTNICOV2511
+2025-05-29 13:25:02 [http-nio-8080-exec-2] INFO  b.r.interceptor.LogInterceptor - OUT: Request: /auth/login
+2025-05-29 13:25:02 [http-nio-8080-exec-2] INFO  b.r.interceptor.LogInterceptor - COMPLETED: Request: /auth/login
+2025-05-29 13:26:40 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-29 13:26:40 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-05-29 13:26:40 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-05-29 13:26:44 [main] INFO  by.rublevskaya.Main - Starting Main using Java 21.0.6 with PID 18036 (/Users/katusarublevsk/Desktop/JAVA/pet_project/pet_project/target/classes started by katusarublevsk in /Users/katusarublevsk/Desktop/JAVA/pet_project/pet_project)
+2025-05-29 13:26:44 [main] DEBUG by.rublevskaya.Main - Running with Spring Boot v3.1.3, Spring v6.0.11
+2025-05-29 13:26:44 [main] INFO  by.rublevskaya.Main - No active profile set, falling back to 1 default profile: "default"
+2025-05-29 13:26:44 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-29 13:26:44 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23 ms. Found 8 JPA repository interfaces.
+2025-05-29 13:26:45 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-05-29 13:26:45 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-29 13:26:45 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+2025-05-29 13:26:45 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-05-29 13:26:45 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 728 ms
+2025-05-29 13:26:45 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.16.3 by Redgate
+2025-05-29 13:26:45 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2025-05-29 13:26:45 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2025-05-29 13:26:45 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-05-29 13:26:45 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5ce3409b
+2025-05-29 13:26:45 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-05-29 13:26:45 [main] INFO  o.f.c.i.d.base.BaseDatabaseType - Database: jdbc:postgresql://localhost:5432/postgres (PostgreSQL 17.2)
+2025-05-29 13:26:45 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 17.2 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2025-05-29 13:26:45 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.010s)
+2025-05-29 13:26:45 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "medical_assistant": 1
+2025-05-29 13:26:45 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "medical_assistant" is up to date. No migration necessary.
+2025-05-29 13:26:45 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-29 13:26:45 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.7.Final
+2025-05-29 13:26:45 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+2025-05-29 13:26:45 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2025-05-29 13:26:45 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-29 13:26:45 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+2025-05-29 13:26:45 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-05-29 13:26:46 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.appointments 
+       alter column created_at set data type timestamp(6)
+2025-05-29 13:26:46 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.appointments 
+       alter column date_time set data type timestamp(6)
+2025-05-29 13:26:46 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.appointments 
+       alter column updated_at set data type timestamp(6)
+2025-05-29 13:26:46 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.clinics 
+       alter column created_at set data type timestamp(6)
+2025-05-29 13:26:46 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.clinics 
+       alter column updated_at set data type timestamp(6)
+2025-05-29 13:26:46 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.doctors 
+       alter column created_at set data type timestamp(6)
+2025-05-29 13:26:46 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.doctors 
+       alter column updated_at set data type timestamp(6)
+2025-05-29 13:26:46 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.health_metrics 
+       alter column blood_sugar set data type float(53)
+2025-05-29 13:26:46 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.health_metrics 
+       alter column created_at set data type timestamp(6)
+2025-05-29 13:26:46 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.health_metrics 
+       alter column temperature set data type float(53)
+2025-05-29 13:26:46 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.health_metrics 
+       alter column timestamp set data type timestamp(6)
+2025-05-29 13:26:46 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.health_metrics 
+       alter column updated_at set data type timestamp(6)
+2025-05-29 13:26:46 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.medical_records 
+       alter column created_at set data type timestamp(6)
+2025-05-29 13:26:46 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.medical_records 
+       alter column updated_at set data type timestamp(6)
+2025-05-29 13:26:46 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.medications 
+       alter column created_at set data type timestamp(6)
+2025-05-29 13:26:46 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.medications 
+       alter column end_date set data type timestamp(6)
+2025-05-29 13:26:46 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.medications 
+       alter column start_date set data type timestamp(6)
+2025-05-29 13:26:46 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.medications 
+       alter column updated_at set data type timestamp(6)
+2025-05-29 13:26:46 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.security 
+       alter column created set data type timestamp(6)
+2025-05-29 13:26:46 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.security 
+       alter column updated set data type timestamp(6)
+2025-05-29 13:26:46 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.users 
+       alter column created_at set data type timestamp(6)
+2025-05-29 13:26:46 [main] DEBUG org.hibernate.SQL - 
+    alter table if exists medical_assistant.users 
+       alter column updated_at set data type timestamp(6)
+2025-05-29 13:26:46 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-29 13:26:46 [main] INFO  b.rublevskaya.security.jwt.JwtFilter - JwtFilter created
+2025-05-29 13:26:46 [main] DEBUG b.rublevskaya.security.jwt.JwtFilter - Filter 'jwtFilter' configured for use
+2025-05-29 13:26:46 [main] INFO  b.r.security.SecurityConfig - SecurityConfig created with JWTFilter:
+2025-05-29 13:26:46 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-29 13:26:46 [main] DEBUG o.s.s.c.a.a.c.AuthenticationConfiguration$DefaultPasswordEncoderAuthenticationManagerBuilder - No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2025-05-29 13:26:46 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2025-05-29 13:26:46 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@32be672d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@23e54c8a, org.springframework.security.web.context.SecurityContextHolderFilter@157e0f6b, org.springframework.security.web.header.HeaderWriterFilter@1252d480, org.springframework.security.web.authentication.logout.LogoutFilter@14acc33e, by.rublevskaya.security.jwt.JwtFilter@6a7cbeed, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1f832df0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@173c0722, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@276e5add, org.springframework.security.web.session.SessionManagementFilter@7b186fb8, org.springframework.security.web.access.ExceptionTranslationFilter@14ea3ecf, org.springframework.security.web.access.intercept.AuthorizationFilter@35e63d26]
+2025-05-29 13:26:46 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-05-29 13:26:46 [main] INFO  by.rublevskaya.Main - Started Main in 2.505 seconds (process running for 2.751)
+2025-05-29 13:26:50 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-29 13:26:50 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-05-29 13:26:50 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-05-29 13:26:50 [http-nio-8080-exec-2] DEBUG o.s.security.web.FilterChainProxy - Securing GET /users
+2025-05-29 13:26:50 [http-nio-8080-exec-2] WARN  b.rublevskaya.security.jwt.JwtFilter - No valid Authorization header found
+2025-05-29 13:26:50 [http-nio-8080-exec-2] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-05-29 13:27:04 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Securing POST /auth/login
+2025-05-29 13:27:04 [http-nio-8080-exec-3] WARN  b.rublevskaya.security.jwt.JwtFilter - No valid Authorization header found
+2025-05-29 13:27:04 [http-nio-8080-exec-3] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-05-29 13:27:04 [http-nio-8080-exec-3] DEBUG o.s.security.web.FilterChainProxy - Secured POST /auth/login
+2025-05-29 13:27:04 [http-nio-8080-exec-3] INFO  b.r.interceptor.LogInterceptor - IN: Request: /auth/login
+2025-05-29 13:27:04 [http-nio-8080-exec-3] INFO  b.r.controller.AuthController - Received login request for user: SOTNICOV2511
+2025-05-29 13:27:04 [http-nio-8080-exec-3] INFO  by.rublevskaya.service.AuthService - Attempting to log in user
+2025-05-29 13:27:04 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.created,
+        s1_0.login,
+        s1_0.password,
+        s1_0.role,
+        s1_0.updated,
+        s1_0.user_id 
+    from
+        medical_assistant.security s1_0 
+    where
+        s1_0.login=?
+2025-05-29 13:27:04 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birth_date,
+        u1_0.blood_type,
+        u1_0.created_at,
+        u1_0.doctor_id,
+        u1_0.email,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        medical_assistant.users u1_0 
+    where
+        u1_0.username=?
+2025-05-29 13:27:04 [http-nio-8080-exec-3] INFO  by.rublevskaya.service.AuthService - User 'SOTNICOV2511' successfully logged in and token generated.
+2025-05-29 13:27:04 [http-nio-8080-exec-3] INFO  b.r.controller.AuthController - Login successful for user: SOTNICOV2511
+2025-05-29 13:27:04 [http-nio-8080-exec-3] INFO  b.r.interceptor.LogInterceptor - OUT: Request: /auth/login
+2025-05-29 13:27:04 [http-nio-8080-exec-3] INFO  b.r.interceptor.LogInterceptor - COMPLETED: Request: /auth/login
+2025-05-29 13:27:13 [http-nio-8080-exec-4] DEBUG o.s.security.web.FilterChainProxy - Securing GET /users
+2025-05-29 13:27:13 [http-nio-8080-exec-4] INFO  b.rublevskaya.security.jwt.JwtFilter - Extracted token: yJhbGciOiJ...
+2025-05-29 13:27:13 [http-nio-8080-exec-4] ERROR by.rublevskaya.security.jwt.JwtUtil - JWT validation failed: Malformed JWT JSON: Ș[Ȏ��̍M��
+2025-05-29 13:27:13 [http-nio-8080-exec-4] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2025-05-29 13:27:32 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /users
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  b.rublevskaya.security.jwt.JwtFilter - Extracted token: eyJhbGciOi...
+2025-05-29 13:27:32 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.created,
+        s1_0.login,
+        s1_0.password,
+        s1_0.role,
+        s1_0.updated,
+        s1_0.user_id 
+    from
+        medical_assistant.security s1_0 
+    where
+        s1_0.login=?
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  b.rublevskaya.security.jwt.JwtFilter - User SOTNICOV2511 authenticated successfully with role ROLE_USER
+2025-05-29 13:27:32 [http-nio-8080-exec-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /users
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  b.r.interceptor.LogInterceptor - IN: Request: /users
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  b.r.controller.UserCrudController - Fetching all users...
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  b.r.service.UserCrudService - Fetching all users.
+2025-05-29 13:27:32 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - 
     select
         u1_0.id,
         u1_0.birth_date,
@@ -106,33 +1288,177 @@
         u1_0.username 
     from
         medical_assistant.users u1_0
-2025-05-27 00:09:17 [http-nio-8080-exec-2] INFO  b.r.service.UserCrudService - Successfully fetched 11 users.
-2025-05-27 00:09:17 [http-nio-8080-exec-2] INFO  b.r.controller.UserCrudController - Fetched 11 users.
-2025-05-27 00:09:17 [http-nio-8080-exec-2] INFO  by.rublevskaya.mapper.UserMapper - Mapping User entity to UserResponseDto: by.rublevskaya.model.User@625847c9
-2025-05-27 00:09:17 [http-nio-8080-exec-2] INFO  by.rublevskaya.mapper.UserMapper - Mapped UserResponseDto: by.rublevskaya.dto.user.UserResponseDto@929ffe9
-2025-05-27 00:09:17 [http-nio-8080-exec-2] INFO  by.rublevskaya.mapper.UserMapper - Mapping User entity to UserResponseDto: by.rublevskaya.model.User@bcfb1ad
-2025-05-27 00:09:17 [http-nio-8080-exec-2] INFO  by.rublevskaya.mapper.UserMapper - Mapped UserResponseDto: by.rublevskaya.dto.user.UserResponseDto@fba40e5
-2025-05-27 00:09:17 [http-nio-8080-exec-2] INFO  by.rublevskaya.mapper.UserMapper - Mapping User entity to UserResponseDto: by.rublevskaya.model.User@34fdbb93
-2025-05-27 00:09:17 [http-nio-8080-exec-2] INFO  by.rublevskaya.mapper.UserMapper - Mapped UserResponseDto: by.rublevskaya.dto.user.UserResponseDto@5998074f
-2025-05-27 00:09:17 [http-nio-8080-exec-2] INFO  by.rublevskaya.mapper.UserMapper - Mapping User entity to UserResponseDto: by.rublevskaya.model.User@4f76c2a1
-2025-05-27 00:09:17 [http-nio-8080-exec-2] INFO  by.rublevskaya.mapper.UserMapper - Mapped UserResponseDto: by.rublevskaya.dto.user.UserResponseDto@70a78bcc
-2025-05-27 00:09:17 [http-nio-8080-exec-2] INFO  by.rublevskaya.mapper.UserMapper - Mapping User entity to UserResponseDto: by.rublevskaya.model.User@66e87790
-2025-05-27 00:09:17 [http-nio-8080-exec-2] INFO  by.rublevskaya.mapper.UserMapper - Mapped UserResponseDto: by.rublevskaya.dto.user.UserResponseDto@3637f486
-2025-05-27 00:09:17 [http-nio-8080-exec-2] INFO  by.rublevskaya.mapper.UserMapper - Mapping User entity to UserResponseDto: by.rublevskaya.model.User@10dcf039
-2025-05-27 00:09:17 [http-nio-8080-exec-2] INFO  by.rublevskaya.mapper.UserMapper - Mapped UserResponseDto: by.rublevskaya.dto.user.UserResponseDto@6bd737cd
-2025-05-27 00:09:17 [http-nio-8080-exec-2] INFO  by.rublevskaya.mapper.UserMapper - Mapping User entity to UserResponseDto: by.rublevskaya.model.User@49a4e092
-2025-05-27 00:09:17 [http-nio-8080-exec-2] INFO  by.rublevskaya.mapper.UserMapper - Mapped UserResponseDto: by.rublevskaya.dto.user.UserResponseDto@726cf787
-2025-05-27 00:09:17 [http-nio-8080-exec-2] INFO  by.rublevskaya.mapper.UserMapper - Mapping User entity to UserResponseDto: by.rublevskaya.model.User@30be50cd
-2025-05-27 00:09:17 [http-nio-8080-exec-2] INFO  by.rublevskaya.mapper.UserMapper - Mapped UserResponseDto: by.rublevskaya.dto.user.UserResponseDto@3e59fbed
-2025-05-27 00:09:17 [http-nio-8080-exec-2] INFO  by.rublevskaya.mapper.UserMapper - Mapping User entity to UserResponseDto: by.rublevskaya.model.User@154fe5bd
-2025-05-27 00:09:17 [http-nio-8080-exec-2] INFO  by.rublevskaya.mapper.UserMapper - Mapped UserResponseDto: by.rublevskaya.dto.user.UserResponseDto@37c3ab64
-2025-05-27 00:09:17 [http-nio-8080-exec-2] INFO  by.rublevskaya.mapper.UserMapper - Mapping User entity to UserResponseDto: by.rublevskaya.model.User@62658215
-2025-05-27 00:09:17 [http-nio-8080-exec-2] INFO  by.rublevskaya.mapper.UserMapper - Mapped UserResponseDto: by.rublevskaya.dto.user.UserResponseDto@65f89b0e
-2025-05-27 00:09:17 [http-nio-8080-exec-2] INFO  by.rublevskaya.mapper.UserMapper - Mapping User entity to UserResponseDto: by.rublevskaya.model.User@c2b5ebb
-2025-05-27 00:09:17 [http-nio-8080-exec-2] INFO  by.rublevskaya.mapper.UserMapper - Mapped UserResponseDto: by.rublevskaya.dto.user.UserResponseDto@70bd88f9
-2025-05-27 00:09:17 [http-nio-8080-exec-2] INFO  b.r.controller.UserCrudController - Mapped users to response DTOs: [by.rublevskaya.dto.user.UserResponseDto@929ffe9, by.rublevskaya.dto.user.UserResponseDto@fba40e5, by.rublevskaya.dto.user.UserResponseDto@5998074f, by.rublevskaya.dto.user.UserResponseDto@70a78bcc, by.rublevskaya.dto.user.UserResponseDto@3637f486, by.rublevskaya.dto.user.UserResponseDto@6bd737cd, by.rublevskaya.dto.user.UserResponseDto@726cf787, by.rublevskaya.dto.user.UserResponseDto@3e59fbed, by.rublevskaya.dto.user.UserResponseDto@37c3ab64, by.rublevskaya.dto.user.UserResponseDto@65f89b0e, by.rublevskaya.dto.user.UserResponseDto@70bd88f9]
-2025-05-27 00:09:17 [http-nio-8080-exec-2] INFO  b.r.interceptor.LogInterceptor - OUT: Request: /users
-2025-05-27 00:09:17 [http-nio-8080-exec-2] INFO  b.r.interceptor.LogInterceptor - COMPLETED: Request: /users
-2025-05-27 00:13:21 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-05-27 00:13:21 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-05-27 00:13:21 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  b.r.service.UserCrudService - Successfully fetched 15 users.
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  b.r.controller.UserCrudController - Fetched 15 users.
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  by.rublevskaya.mapper.UserMapper - Mapping User entity to UserResponseDto: by.rublevskaya.model.User@1dc659ea
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  by.rublevskaya.mapper.UserMapper - Mapped UserResponseDto: by.rublevskaya.dto.user.UserResponseDto@68afcff
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  by.rublevskaya.mapper.UserMapper - Mapping User entity to UserResponseDto: by.rublevskaya.model.User@68b062a3
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  by.rublevskaya.mapper.UserMapper - Mapped UserResponseDto: by.rublevskaya.dto.user.UserResponseDto@669fb577
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  by.rublevskaya.mapper.UserMapper - Mapping User entity to UserResponseDto: by.rublevskaya.model.User@7d4db1c9
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  by.rublevskaya.mapper.UserMapper - Mapped UserResponseDto: by.rublevskaya.dto.user.UserResponseDto@778879dd
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  by.rublevskaya.mapper.UserMapper - Mapping User entity to UserResponseDto: by.rublevskaya.model.User@371feec6
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  by.rublevskaya.mapper.UserMapper - Mapped UserResponseDto: by.rublevskaya.dto.user.UserResponseDto@57e30f74
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  by.rublevskaya.mapper.UserMapper - Mapping User entity to UserResponseDto: by.rublevskaya.model.User@1839e8c6
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  by.rublevskaya.mapper.UserMapper - Mapped UserResponseDto: by.rublevskaya.dto.user.UserResponseDto@65f6c73
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  by.rublevskaya.mapper.UserMapper - Mapping User entity to UserResponseDto: by.rublevskaya.model.User@73f73418
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  by.rublevskaya.mapper.UserMapper - Mapped UserResponseDto: by.rublevskaya.dto.user.UserResponseDto@1d7045c2
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  by.rublevskaya.mapper.UserMapper - Mapping User entity to UserResponseDto: by.rublevskaya.model.User@63a40056
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  by.rublevskaya.mapper.UserMapper - Mapped UserResponseDto: by.rublevskaya.dto.user.UserResponseDto@29828120
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  by.rublevskaya.mapper.UserMapper - Mapping User entity to UserResponseDto: by.rublevskaya.model.User@2b05ab3a
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  by.rublevskaya.mapper.UserMapper - Mapped UserResponseDto: by.rublevskaya.dto.user.UserResponseDto@6655b3cb
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  by.rublevskaya.mapper.UserMapper - Mapping User entity to UserResponseDto: by.rublevskaya.model.User@7cad0944
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  by.rublevskaya.mapper.UserMapper - Mapped UserResponseDto: by.rublevskaya.dto.user.UserResponseDto@1b147786
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  by.rublevskaya.mapper.UserMapper - Mapping User entity to UserResponseDto: by.rublevskaya.model.User@3630b53d
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  by.rublevskaya.mapper.UserMapper - Mapped UserResponseDto: by.rublevskaya.dto.user.UserResponseDto@4557f73
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  by.rublevskaya.mapper.UserMapper - Mapping User entity to UserResponseDto: by.rublevskaya.model.User@7555a51d
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  by.rublevskaya.mapper.UserMapper - Mapped UserResponseDto: by.rublevskaya.dto.user.UserResponseDto@39e37558
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  by.rublevskaya.mapper.UserMapper - Mapping User entity to UserResponseDto: by.rublevskaya.model.User@730f9cf6
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  by.rublevskaya.mapper.UserMapper - Mapped UserResponseDto: by.rublevskaya.dto.user.UserResponseDto@72e35244
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  by.rublevskaya.mapper.UserMapper - Mapping User entity to UserResponseDto: by.rublevskaya.model.User@677c4cfa
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  by.rublevskaya.mapper.UserMapper - Mapped UserResponseDto: by.rublevskaya.dto.user.UserResponseDto@4af3a3d9
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  by.rublevskaya.mapper.UserMapper - Mapping User entity to UserResponseDto: by.rublevskaya.model.User@54568475
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  by.rublevskaya.mapper.UserMapper - Mapped UserResponseDto: by.rublevskaya.dto.user.UserResponseDto@65f2e313
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  by.rublevskaya.mapper.UserMapper - Mapping User entity to UserResponseDto: by.rublevskaya.model.User@c73aeaf
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  by.rublevskaya.mapper.UserMapper - Mapped UserResponseDto: by.rublevskaya.dto.user.UserResponseDto@47990340
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  b.r.controller.UserCrudController - Mapped users to response DTOs: [by.rublevskaya.dto.user.UserResponseDto@68afcff, by.rublevskaya.dto.user.UserResponseDto@669fb577, by.rublevskaya.dto.user.UserResponseDto@778879dd, by.rublevskaya.dto.user.UserResponseDto@57e30f74, by.rublevskaya.dto.user.UserResponseDto@65f6c73, by.rublevskaya.dto.user.UserResponseDto@1d7045c2, by.rublevskaya.dto.user.UserResponseDto@29828120, by.rublevskaya.dto.user.UserResponseDto@6655b3cb, by.rublevskaya.dto.user.UserResponseDto@1b147786, by.rublevskaya.dto.user.UserResponseDto@4557f73, by.rublevskaya.dto.user.UserResponseDto@39e37558, by.rublevskaya.dto.user.UserResponseDto@72e35244, by.rublevskaya.dto.user.UserResponseDto@4af3a3d9, by.rublevskaya.dto.user.UserResponseDto@65f2e313, by.rublevskaya.dto.user.UserResponseDto@47990340]
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  b.r.interceptor.LogInterceptor - OUT: Request: /users
+2025-05-29 13:27:32 [http-nio-8080-exec-5] INFO  b.r.interceptor.LogInterceptor - COMPLETED: Request: /users
+2025-05-29 13:27:53 [http-nio-8080-exec-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /users/17
+2025-05-29 13:27:53 [http-nio-8080-exec-6] INFO  b.rublevskaya.security.jwt.JwtFilter - Extracted token: eyJhbGciOi...
+2025-05-29 13:27:53 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.created,
+        s1_0.login,
+        s1_0.password,
+        s1_0.role,
+        s1_0.updated,
+        s1_0.user_id 
+    from
+        medical_assistant.security s1_0 
+    where
+        s1_0.login=?
+2025-05-29 13:27:53 [http-nio-8080-exec-6] ERROR b.rublevskaya.security.jwt.JwtFilter - User with ID 18 attempted to modify data for ID 17
+2025-05-29 13:27:53 [http-nio-8080-exec-6] ERROR b.rublevskaya.security.jwt.JwtFilter - Access denied: You are not allowed to modify data for other users or doctors.
+2025-05-29 13:27:59 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /users/18
+2025-05-29 13:27:59 [http-nio-8080-exec-7] INFO  b.rublevskaya.security.jwt.JwtFilter - Extracted token: eyJhbGciOi...
+2025-05-29 13:27:59 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.created,
+        s1_0.login,
+        s1_0.password,
+        s1_0.role,
+        s1_0.updated,
+        s1_0.user_id 
+    from
+        medical_assistant.security s1_0 
+    where
+        s1_0.login=?
+2025-05-29 13:27:59 [http-nio-8080-exec-7] INFO  b.rublevskaya.security.jwt.JwtFilter - User SOTNICOV2511 authenticated successfully with role ROLE_USER
+2025-05-29 13:27:59 [http-nio-8080-exec-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /users/18
+2025-05-29 13:27:59 [http-nio-8080-exec-7] INFO  b.r.interceptor.LogInterceptor - IN: Request: /users/18
+2025-05-29 13:27:59 [http-nio-8080-exec-7] INFO  b.r.controller.UserCrudController - Fetching user with ID: 18
+2025-05-29 13:27:59 [http-nio-8080-exec-7] INFO  b.r.service.UserCrudService - Fetching user with ID: 18
+2025-05-29 13:27:59 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birth_date,
+        u1_0.blood_type,
+        u1_0.created_at,
+        u1_0.doctor_id,
+        u1_0.email,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        medical_assistant.users u1_0 
+    where
+        u1_0.id=?
+2025-05-29 13:27:59 [http-nio-8080-exec-7] INFO  b.r.service.UserCrudService - Successfully fetched user with ID: 18
+2025-05-29 13:27:59 [http-nio-8080-exec-7] INFO  by.rublevskaya.mapper.UserMapper - Mapping User entity to UserResponseDto: by.rublevskaya.model.User@206f0326
+2025-05-29 13:27:59 [http-nio-8080-exec-7] INFO  by.rublevskaya.mapper.UserMapper - Mapped UserResponseDto: by.rublevskaya.dto.user.UserResponseDto@38041e0
+2025-05-29 13:27:59 [http-nio-8080-exec-7] INFO  b.r.controller.UserCrudController - User with ID: 18 retrieved successfully: by.rublevskaya.dto.user.UserResponseDto@38041e0
+2025-05-29 13:27:59 [http-nio-8080-exec-7] INFO  b.r.interceptor.LogInterceptor - OUT: Request: /users/18
+2025-05-29 13:27:59 [http-nio-8080-exec-7] INFO  b.r.interceptor.LogInterceptor - COMPLETED: Request: /users/18
+2025-05-29 13:28:14 [http-nio-8080-exec-8] DEBUG o.s.security.web.FilterChainProxy - Securing DELETE /users/17
+2025-05-29 13:28:14 [http-nio-8080-exec-8] INFO  b.rublevskaya.security.jwt.JwtFilter - Extracted token: eyJhbGciOi...
+2025-05-29 13:28:14 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.created,
+        s1_0.login,
+        s1_0.password,
+        s1_0.role,
+        s1_0.updated,
+        s1_0.user_id 
+    from
+        medical_assistant.security s1_0 
+    where
+        s1_0.login=?
+2025-05-29 13:28:14 [http-nio-8080-exec-8] ERROR b.rublevskaya.security.jwt.JwtFilter - User with ID 18 attempted to modify data for ID 17
+2025-05-29 13:28:14 [http-nio-8080-exec-8] ERROR b.rublevskaya.security.jwt.JwtFilter - Access denied: You are not allowed to modify data for other users or doctors.
+2025-05-29 13:28:21 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Securing DELETE /users/18
+2025-05-29 13:28:21 [http-nio-8080-exec-9] INFO  b.rublevskaya.security.jwt.JwtFilter - Extracted token: eyJhbGciOi...
+2025-05-29 13:28:21 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.created,
+        s1_0.login,
+        s1_0.password,
+        s1_0.role,
+        s1_0.updated,
+        s1_0.user_id 
+    from
+        medical_assistant.security s1_0 
+    where
+        s1_0.login=?
+2025-05-29 13:28:21 [http-nio-8080-exec-9] INFO  b.rublevskaya.security.jwt.JwtFilter - User SOTNICOV2511 authenticated successfully with role ROLE_USER
+2025-05-29 13:28:21 [http-nio-8080-exec-9] DEBUG o.s.security.web.FilterChainProxy - Secured DELETE /users/18
+2025-05-29 13:28:21 [http-nio-8080-exec-9] INFO  b.r.interceptor.LogInterceptor - IN: Request: /users/18
+2025-05-29 13:28:21 [http-nio-8080-exec-9] INFO  b.r.controller.UserCrudController - Received request to delete user with ID: 18
+2025-05-29 13:28:21 [http-nio-8080-exec-9] INFO  b.r.service.UserCrudService - Attempting to delete user with ID: 18
+2025-05-29 13:28:21 [http-nio-8080-exec-9] INFO  b.r.service.UserCrudService - Fetching user with ID: 18
+2025-05-29 13:28:21 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        u1_0.id,
+        u1_0.birth_date,
+        u1_0.blood_type,
+        u1_0.created_at,
+        u1_0.doctor_id,
+        u1_0.email,
+        u1_0.updated_at,
+        u1_0.username 
+    from
+        medical_assistant.users u1_0 
+    where
+        u1_0.id=?
+2025-05-29 13:28:21 [http-nio-8080-exec-9] INFO  b.r.service.UserCrudService - Successfully fetched user with ID: 18
+2025-05-29 13:28:21 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.created,
+        s1_0.login,
+        s1_0.password,
+        s1_0.role,
+        s1_0.updated,
+        s1_0.user_id 
+    from
+        medical_assistant.security s1_0 
+    where
+        s1_0.login=?
+2025-05-29 13:28:21 [http-nio-8080-exec-9] INFO  b.r.service.UserCrudService - User with ID 18 has been successfully deleted.
+2025-05-29 13:28:21 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        medical_assistant.security 
+    where
+        id=?
+2025-05-29 13:28:21 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - 
+    delete 
+    from
+        medical_assistant.users 
+    where
+        id=?
+2025-05-29 13:28:21 [http-nio-8080-exec-9] INFO  b.r.controller.UserCrudController - User with ID: 18 deleted successfully
+2025-05-29 13:28:21 [http-nio-8080-exec-9] INFO  b.r.interceptor.LogInterceptor - OUT: Request: /users/18
+2025-05-29 13:28:21 [http-nio-8080-exec-9] INFO  b.r.interceptor.LogInterceptor - COMPLETED: Request: /users/18

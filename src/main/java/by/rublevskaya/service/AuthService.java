@@ -14,8 +14,10 @@ import by.rublevskaya.repository.ClinicRepository;
 import by.rublevskaya.repository.DoctorRepository;
 import by.rublevskaya.repository.SecurityRepository;
 import by.rublevskaya.repository.UserRepository;
+import by.rublevskaya.security.jwt.JwtUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -32,6 +34,8 @@ public class AuthService {
     private final DoctorRepository doctorRepository;
     private final DoctorMapper doctorMapper;
     private final ClinicRepository clinicRepository;
+    private final PasswordEncoder passwordEncoder;
+    private final JwtUtil jwtUtil;
 
     @Transactional
     public void registerUser(UserDto dto) {
@@ -46,7 +50,7 @@ public class AuthService {
 
         Security security = new Security();
         security.setLogin(dto.getUsername());
-        security.setPassword(dto.getPassword());
+        security.setPassword(passwordEncoder.encode(dto.getPassword()));
         security.setRole("USER");
         security.setUserId(savedUser.getId());
         security.setCreated(LocalDateTime.now());
@@ -82,7 +86,7 @@ public class AuthService {
 
         Security security = new Security();
         security.setLogin(dto.getUsername());
-        security.setPassword(dto.getPassword());
+        security.setPassword(passwordEncoder.encode(dto.getPassword()));
         security.setRole("DOCTOR");
         security.setUserId(savedUser.getId());
         security.setCreated(LocalDateTime.now());
@@ -90,18 +94,29 @@ public class AuthService {
         securityRepository.save(security);
     }
 
+
     @Transactional(readOnly = true)
     public AuthResponseDto loginUser(AuthRequestDto authRequest) {
         log.info("Attempting to log in user");
+
         Security security = securityRepository.findByLogin(authRequest.getLogin())
                 .orElseThrow(() -> new CustomException("Invalid login or password"));
-        if (!security.getPassword().equals(authRequest.getPassword())) {
-            throw new CustomException("Invalid login or password");
+
+        if (!passwordEncoder.matches(authRequest.getPassword(), security.getPassword())) {
+            log.error("Invalid password for login: {}", authRequest.getLogin());
+            throw new CustomException("Invalid username or password");
         }
+        User user = userRepository.findByUsername(security.getLogin())
+                .orElseThrow(() -> new CustomException("User not found for login: " + security.getLogin()));
+
+        String token = jwtUtil.generateToken(security.getLogin(), security.getRole(), user.getId());
+
         AuthResponseDto response = new AuthResponseDto();
         response.setLogin(security.getLogin());
         response.setRole(security.getRole());
-        log.info("User successfully logged in.");
+        response.setToken(token);
+
+        log.info("User '{}' successfully logged in and token generated.", authRequest.getLogin());
         return response;
     }
 }
