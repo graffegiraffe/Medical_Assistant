@@ -8,7 +8,6 @@ import java.util.Map;
 
 @Component
 public class CustomInfoContributor implements InfoContributor {
-
     @Override
     public void contribute(Info.Builder builder) {
         builder

@@ -14,7 +14,6 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 
-
 @Component
 @Slf4j
 public class JwtFilter extends OncePerRequestFilter {
@@ -30,7 +29,6 @@ public class JwtFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {
-
         String token = getTokenFromRequest(request);
 
         if (token != null && jwtUtil.validateToken(token)) {
@@ -59,6 +57,7 @@ public class JwtFilter extends OncePerRequestFilter {
 
                 SecurityContextHolder.getContext().setAuthentication(authentication);
                 log.info("User {} authenticated successfully with role {}", username, role);
+
             } catch (SecurityException ex) {
                 log.error("Access denied: {}", ex.getMessage());
                 response.setStatus(HttpServletResponse.SC_FORBIDDEN);
@@ -79,7 +78,6 @@ public class JwtFilter extends OncePerRequestFilter {
         if (requestURI.contains("/users/") || requestURI.contains("/doctors/")) {
             String[] uriParts = requestURI.split("/");
             String userIdFromPath = uriParts[uriParts.length - 1];
-
             try {
                 if (!userIdFromPath.equals(userIdFromToken.toString())) {
                     log.error("User with ID {} attempted to modify data for ID {}", userIdFromToken, userIdFromPath);

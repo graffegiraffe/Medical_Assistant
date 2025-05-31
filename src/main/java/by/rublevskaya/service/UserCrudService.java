@@ -72,8 +72,6 @@ public class UserCrudService {
         log.info("Updating user with ID: {}", id);
         User existingUser = userRepository.findById(id)
                 .orElseThrow(() -> new CustomException(String.format("User with ID %d was not found", id)));
-
-
         if (!existingUser.getEmail().equals(dto.getEmail())) {
             userRepository.findByEmail(dto.getEmail())
                     .ifPresent(user -> {
@@ -89,7 +87,6 @@ public class UserCrudService {
                     });
             existingUser.setUsername(dto.getUsername());
         }
-
         existingUser.setBirthDate(dto.getBirthDate());
         existingUser.setBloodType(dto.getBloodType());
         User updatedUser = userRepository.save(existingUser);
@@ -123,11 +120,9 @@ public class UserCrudService {
                     });
             existingUser.setUsername(dto.getUsername());
         }
-
         if (dto.getBirthDate() != null) {
             existingUser.setBirthDate(dto.getBirthDate());
         }
-
         if (dto.getBloodType() != null) {
             existingUser.setBloodType(dto.getBloodType());
         }
@@ -135,7 +130,6 @@ public class UserCrudService {
         User updatedUser = userRepository.save(existingUser);
         Security security = securityRepository.findById(updatedUser.getId())
                 .orElseThrow(() -> new CustomException("Security entry for user not found"));
-
         if (dto.getUsername() != null) {
             security.setLogin(dto.getUsername());
         }
@@ -143,7 +137,6 @@ public class UserCrudService {
         if (dto.getPassword() != null && !dto.getPassword().isEmpty()) {
             security.setPassword(dto.getPassword());
         }
-
         securityRepository.save(security);
         log.info("User successfully partially updated with ID: {}", updatedUser.getId());
         return updatedUser;

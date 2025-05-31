@@ -6,7 +6,6 @@ import lombok.Data;
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DoctorResponseDto {
-
     private String specialty;
     private String licenseNumber;
     private String clinicName;

@@ -30,6 +30,7 @@ public class SecurityConfig {
         this.jwtFilter = jwtFilter;
         log.info("SecurityConfig created with JWTFilter:");
     }
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
@@ -39,7 +40,7 @@ public class SecurityConfig {
                         .requestMatchers("/auth/**").permitAll()
                         .requestMatchers("/users/**").hasRole("USER")
                         .requestMatchers(HttpMethod.POST,"/users").hasRole("ADMIN")
-
+                        .requestMatchers("/actuator/**").hasRole("ADMIN")
 
                         .requestMatchers(HttpMethod.GET, "/doctors/**").permitAll()
                         .requestMatchers("/doctors/**").hasAnyRole("ADMIN", "DOCTOR")

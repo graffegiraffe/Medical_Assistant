@@ -36,7 +36,6 @@ public class DoctorCrudService {
     @Transactional
     @Timed
     public DoctorResponseDto createDoctor(DoctorDto registrationDto) {
-
         if (doctorRepository.existsByLicenseNumber(registrationDto.getLicenseNumber())) {
             throw new CustomException("A doctor with this license number already exists." + HttpStatus.BAD_REQUEST);
         }

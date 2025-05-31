@@ -8,7 +8,6 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 public class AppointmentResponseDto {
-
     private String fullName;
     private String clinicName;
     private String specialty;

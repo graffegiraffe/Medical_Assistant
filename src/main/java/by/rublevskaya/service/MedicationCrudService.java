@@ -60,12 +60,10 @@ public class MedicationCrudService {
     @Transactional(readOnly = true)
     public MedicationResponseDto getMedicationById(Long id) {
         log.info("Fetching medication with ID: {}", id);
-
         Medication medication = medicationRepository.findById(id).orElseThrow(() -> {
             log.warn("Medication not found with ID: {}", id);
             return new CustomException("Medication not found with ID " + id);
         });
-
         log.info("Successfully fetched medication with ID: {}", id);
         return medicationMapper.toResponseDto(medication);
     }
@@ -90,12 +88,10 @@ public class MedicationCrudService {
     @Transactional
     public String deleteMedication(Long id) {
         log.info("Attempting to delete medication with ID: {}", id);
-
         if (!medicationRepository.existsById(id)) {
             log.warn("Medication not found with ID: {}", id);
             throw new CustomException("Medication not found with ID " + id);
         }
-
         medicationRepository.deleteById(id);
         log.info("Medication with ID {} has been successfully deleted.", id);
         return "Medication with ID " + id + " has been successfully deleted.";

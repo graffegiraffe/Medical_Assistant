@@ -43,5 +43,4 @@ public class DoctorUpdateDto {
             message = "Blood type must be in the format A+, B-, AB-, O+, etc."
     )
     private String bloodType;
-
 }

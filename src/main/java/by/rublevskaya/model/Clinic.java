@@ -8,9 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.context.annotation.Scope;
@@ -23,8 +21,6 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Data
 @Component
-@Getter
-@Setter
 @Entity
 @Table(name = "clinics", schema = "medical_assistant")
 public class Clinic {

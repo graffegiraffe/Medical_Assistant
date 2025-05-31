@@ -26,6 +26,7 @@ public class AppointmentService {
     private final AppointmentMapper appointmentMapper;
     private final DoctorRepository doctorRepository;
 
+    @Transactional
     public AppointmentResponseDto bookAppointment(AppointmentDto dto) {
         log.info("Attempting to book an appointment for userId: {}, doctorId: {}, dateTime: {}",
                 dto.getUserId(), dto.getDateTime());
@@ -39,6 +40,7 @@ public class AppointmentService {
         if (doctorAppointments.stream().anyMatch(a -> overlapCheck(dto.getDateTime(), a.getDateTime()))) {
             throw new CustomException("The doctor is not available at this time.");
         }
+
         log.info("Successfully booked an appointment with ID: {}", appointment.getId());
         Appointment savedAppointment = appointmentRepository.save(appointment);
         return appointmentMapper.toDto(savedAppointment);

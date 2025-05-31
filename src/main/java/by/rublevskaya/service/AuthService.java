@@ -94,7 +94,6 @@ public class AuthService {
         securityRepository.save(security);
     }
 
-
     @Transactional(readOnly = true)
     public AuthResponseDto loginUser(AuthRequestDto authRequest) {
         log.info("Attempting to log in user");

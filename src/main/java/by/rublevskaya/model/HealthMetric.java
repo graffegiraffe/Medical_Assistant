@@ -29,7 +29,7 @@ public class HealthMetric {
     @Column(nullable = false)
     private LocalDateTime timestamp;
 
-    private String bloodPressure; // Формат: "120/80"
+    private String bloodPressure;
 
     private Double bloodSugar;
 

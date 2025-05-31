@@ -15,7 +15,7 @@ public class HealthMetricDto {
     private LocalDateTime timestamp;
 
     @NotNull(message = "Blood Pressure cannot be null.")
-    private String bloodPressure; // Формат: "120/80"
+    private String bloodPressure;
 
     @NotNull(message = "Blood Sugar cannot be null.")
     private Double bloodSugar;

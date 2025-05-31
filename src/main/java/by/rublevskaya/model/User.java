@@ -46,5 +46,4 @@ public class User {
 
     @Column(name = "doctor_id")
     private Long doctorId;
-
 }

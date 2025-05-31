@@ -44,7 +44,7 @@ public class MedicalRecord {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private RecordType type; // ALLERGY, VACCINE, ILLNESS
+    private RecordType type;
 
     @CreationTimestamp
     @Column(name = "created_at", updatable = false, nullable = false)

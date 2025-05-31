@@ -1,7 +1,9 @@
 package by.rublevskaya.mapper;
+
 import by.rublevskaya.dto.user.UserDto;
 import by.rublevskaya.dto.user.UserResponseDto;
 import by.rublevskaya.model.User;
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -31,5 +33,4 @@ public class UserMapper {
         log.info("Mapped UserResponseDto: {}", dto);
         return dto;
     }
-
 }

@@ -29,7 +29,7 @@ public class Security {
     @Column(nullable = false)
     private String password;
 
-    @Column(nullable = false) // Роль: USER, ADMIN, DOCTOR
+    @Column(nullable = false)
     private String role;
 
     @Column(name = "user_id", nullable = false)
