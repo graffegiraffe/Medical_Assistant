@@ -115,7 +115,6 @@ public class AppointmentService {
             throw new CustomException("You are not authorized to complete this appointment.");
         }
         log.info("Doctor license verification passed. Doctor: {}, Appointment ID: {}", doctorLicense, appointmentId);
-
         appointment.setCompleted(true);
         appointmentRepository.save(appointment);
         log.info("Appointment with ID: {} successfully marked as completed by doctor with license: {}", appointmentId, doctorLicense);

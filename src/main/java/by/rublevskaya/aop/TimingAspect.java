@@ -20,10 +20,8 @@ public class TimingAspect {
         if (!isTimingEnabled) {
             return joinPoint.proceed();
         }
-
         long startTime = System.currentTimeMillis();
         Object result = joinPoint.proceed();
-
         long endTime = System.currentTimeMillis();
         log.info("Method [{}] executed in {} ms", joinPoint.getSignature(), endTime - startTime);
         return result;

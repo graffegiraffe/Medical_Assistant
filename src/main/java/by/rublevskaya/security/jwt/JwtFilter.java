@@ -36,7 +36,6 @@ public class JwtFilter extends OncePerRequestFilter {
                 String username = jwtUtil.extractUsername(token);
                 String role = jwtUtil.extractRole(token);
                 Long userIdFromToken = jwtUtil.extractUserId(token);
-
                 UserDetails userDetails = customUserDetailsService.loadUserByUsername(username);
 
                 if (!userDetails.getAuthorities().stream()
@@ -68,7 +67,6 @@ public class JwtFilter extends OncePerRequestFilter {
                 log.error("Error while setting user authentication: {}", ex.getMessage());
             }
         }
-
         filterChain.doFilter(request, response);
     }
 

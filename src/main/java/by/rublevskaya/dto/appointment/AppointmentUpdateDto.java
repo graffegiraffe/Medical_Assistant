@@ -9,7 +9,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class AppointmentUpdateDto {
-
     private String notes;
 
     @Future(message = "Date and time of the appointment must be in the future")

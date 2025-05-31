@@ -42,7 +42,6 @@ public class AppointmentMapper {
             Doctor doctor = doctorRepository.findByLicenseNumber(appointment.getLicenseNumber())
                     .orElseThrow(() -> new RuntimeException("Doctor with license " + appointment.getLicenseNumber() + " not found"));
             log.info("Found doctor with license {}: {}", appointment.getLicenseNumber(), doctor);
-
             dto.setFullName(doctor.getFullName());
             dto.setClinicName(doctor.getClinicName());
             dto.setSpecialty(doctor.getSpecialty());

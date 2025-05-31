@@ -79,7 +79,6 @@ public class UserCrudService {
                     });
             existingUser.setEmail(dto.getEmail());
         }
-
         if (!existingUser.getUsername().equals(dto.getUsername())) {
             userRepository.findByUsername(dto.getUsername())
                     .ifPresent(user -> {
@@ -112,7 +111,6 @@ public class UserCrudService {
                     });
             existingUser.setEmail(dto.getEmail());
         }
-
         if (dto.getUsername() != null && !existingUser.getUsername().equals(dto.getUsername())) {
             userRepository.findByUsername(dto.getUsername())
                     .ifPresent(user -> {
@@ -126,7 +124,6 @@ public class UserCrudService {
         if (dto.getBloodType() != null) {
             existingUser.setBloodType(dto.getBloodType());
         }
-
         User updatedUser = userRepository.save(existingUser);
         Security security = securityRepository.findById(updatedUser.getId())
                 .orElseThrow(() -> new CustomException("Security entry for user not found"));

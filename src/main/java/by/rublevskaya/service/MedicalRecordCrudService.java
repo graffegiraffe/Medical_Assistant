@@ -104,7 +104,6 @@ public class MedicalRecordCrudService {
             log.warn("Medical record with ID {} does not exist. Deletion aborted.", id);
             throw new CustomException("Medical record not found with ID " + id);
         }
-
         medicalRecordRepository.deleteById(id);
         log.info("Medical record with ID {} has been successfully deleted.", id);
         return "Medical record with ID " + id + " has been successfully deleted.";

@@ -42,7 +42,6 @@ public class MedicationCrudService {
             throw new CustomException(
                     "Duplicate medication with the same details already exists for this user.");
         }
-
         Medication savedMedication = medicationRepository.save(medication);
         log.info("Medication successfully created with ID: {}", savedMedication.getId());
         return medicationMapper.toResponseDto(savedMedication);
@@ -71,15 +70,12 @@ public class MedicationCrudService {
     @Transactional
     public MedicationResponseDto updateMedication(Long id, MedicationDto medicationDto) {
         log.info("Updating medication with ID: {}", id);
-
         Medication medication = medicationRepository.findById(id).orElseThrow(() -> {
             log.warn("Medication not found with ID: {}", id);
             return new CustomException("Medication not found with ID " + id);
         });
-
         log.debug("Updating medication properties for ID: {}. New Data: {}", id, medicationDto);
         medicationMapper.updateEntity(medication, medicationDto);
-
         Medication updatedMedication = medicationRepository.save(medication);
         log.info("Medication successfully updated with ID: {}", updatedMedication.getId());
         return medicationMapper.toResponseDto(updatedMedication);

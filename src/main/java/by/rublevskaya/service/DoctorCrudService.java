@@ -59,7 +59,6 @@ public class DoctorCrudService {
             user.setBirthDate(registrationDto.getBirthDate());
             user.setBloodType(registrationDto.getBloodType());
             user.setDoctorId(savedDoctor.getId());
-
             userRepository.save(user);
 
             Security security = new Security();
@@ -117,7 +116,6 @@ public class DoctorCrudService {
             log.warn("Doctor with ID {} not found.", id);
             return new CustomException("Doctor with ID " + id + " not found");
         });
-
         doctorMapper.updateEntity(doctor, dto);
         Doctor savedDoctor = doctorRepository.save(doctor);
         log.info("Doctor with partially updated successfully." + id);

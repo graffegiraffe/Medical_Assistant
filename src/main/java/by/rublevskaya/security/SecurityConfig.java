@@ -101,6 +101,7 @@ public class SecurityConfig {
         return userDetailsService;
 
     }
+
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
         return authenticationConfiguration.getAuthenticationManager();
