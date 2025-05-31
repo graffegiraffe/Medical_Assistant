@@ -24,14 +24,15 @@ The application provides a robust and user-friendly interface for managing medic
 - [Health Metrics](#Health-Metrics)
 - [Appointments](#Appointments)
 - [Actuator](#Actuator)
-4. [Technologies Used](#Technologies Used)
-5. [REST API Documentation](#rest-api-documentation)
-6. [Architecture](#architecture)
-- [Layers](#layers)
-7. [Installation and Launch](#installation-and-launch)
-- [Requirements](#requirements)
-- [Project Launch](#project-launch)
-8. [Contacts](#contacts)
+4. [Technologies Used](#Technologies-Used)
+5. [REST API Documentation](#Rest-api-documentation)
+6. [Architecture](#Architecture)
+- [Layers](#Layers)
+7.[Testing](#Testing)
+8. [Installation and Launch](#Installation-and-launch)
+- [Requirements](#Requirements)
+- [Project Launch](#Project-launch)
+9. [Contacts](#Contacts)
 
 ---
 
@@ -105,11 +106,12 @@ This API provides a comprehensive set of endpoints for managing medical-related 
 
 `http://localhost:8080`
 
-##Authentication
+
+## Authentication
 
 The API provides authentication endpoints for both users and doctors.
 
-###User Registration
+### User Registration
 
 ```http
 POST /auth/register
@@ -126,7 +128,7 @@ POST /auth/register
 }
 ```
 
-###Doctor Registration
+### Doctor Registration
 
 ```http
 POST /auth/register-doctor
@@ -159,7 +161,7 @@ POST /auth/login
 }
 ```
 
-##Users
+## Users
 
 ### Create User
 
@@ -184,7 +186,7 @@ POST /users
 GET /users
 ```
 
-###Get User by ID
+### Get User by ID
 
 ```http
 GET /users/{id}
@@ -226,9 +228,9 @@ PATCH /users/{id}
 DELETE /users/{id}
 ```
 
-##Doctors
+## Doctors
 
-###Create Doctor
+### Create Doctor
 
 ```http
 POST /doctors
@@ -256,7 +258,7 @@ POST /doctors
 GET /doctors
 ```
 
-###Get Doctor by ID
+### Get Doctor by ID
 
 ```http
 GET /doctors/{id}
@@ -301,9 +303,9 @@ PATCH /doctors/{id}
 DELETE /doctors/{id}
 ```
 
-##Clinics
+## Clinics
 
-###Create Clinic
+### Create Clinic
 
 ```http
 POST /clinics
@@ -318,13 +320,13 @@ POST /clinics
 }
 ```
 
-###Get All Clinics
+### Get All Clinics
 
 ```http
 GET /clinics
 ```
 
-###Get Clinic by ID
+### Get Clinic by ID
 
 ```http
 GET /clinics/{id}
@@ -345,7 +347,7 @@ PUT /clinics/{id}
 }
 ```
 
-###Partial Update Clinic
+### Partial Update Clinic
 
 ```http
 PATCH /clinics/{id}
@@ -364,9 +366,9 @@ PATCH /clinics/{id}
 DELETE /clinics/{id}
 ```
 
-##Medications
+## Medications
 
-###Create Medication
+### Create Medication
 
 ```http
 POST /medications
@@ -384,13 +386,13 @@ POST /medications
 }
 ```
 
-###Get Medications by User
+### Get Medications by User
 
 ```http
 GET /medications/user/{userId}
 ```
 
-###Get Medication by ID
+### Get Medication by ID
 
 ```http
 GET /medications/{id}
@@ -422,7 +424,7 @@ DELETE /medications/{id}
 
 ## Medical Records
 
-###Create Medical Record
+### Create Medical Record
 
 ```http
 POST /medicalrecords
@@ -448,7 +450,7 @@ POST /medicalrecords
 GET /medicalrecords/user/{userId}
 ```
 
-###Get Medical Record by ID
+### Get Medical Record by ID
 
 ```http
 GET /medicalrecords/{id}
@@ -545,7 +547,7 @@ DELETE /healthmetrics/{id}
 
 ## Appointments
 
-###Create Appointment
+### Create Appointment
 
 ```http
 POST /appointments
@@ -567,7 +569,7 @@ POST /appointments
 GET /appointments/user/{userId}
 ```
 
-###Complete Appointment
+### Complete Appointment
 
 ```http
 PATCH /appointments/{id}/complete
@@ -587,7 +589,7 @@ DELETE /appointments/outdated
 
 ## Actuator Endpoints
 
-###Health Check
+### Health Check
 
 ```http
 GET /actuator/health
@@ -599,7 +601,7 @@ GET /actuator/health
 GET /actuator/info
 ```
 
-##Notes
+## Notes
 
 1. All endpoints require proper authentication unless specified otherwise.
 2. Replace `{id}` and `{userId}` with actual IDs in the requests.
@@ -624,7 +626,7 @@ GET /actuator/info
 ## Testing
 
 - DataBase DDL is available here [DDL](src/main/resources/DDL/database_ddl.sql)
-- Postman collection is available here [collection]()
+- Postman collection is available here [collection](src/main/resources/postman/medical_assistant.postman_collection.json)
 
 ---
 ## Installation and launch
@@ -647,7 +649,7 @@ java -jar target/medical-assistant.jar
 ```
 5. The application will be available on port `8080`.
 
---
+---
 
 ## Contacts
 
